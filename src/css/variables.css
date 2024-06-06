@@ -1,0 +1,16 @@
+:root {
+  /* App background colors */
+  --background-dark: #2d2d2d;
+  --background-main: #ffffff;
+  --background-secondary: #f5f5f5;
+  --background-green: #6b8b74;
+  --background-light-green: #92a498;
+  --background-purple: #827fc3;
+
+  /* App font color */
+  --font-dark: #2d2d2d;
+  --font-light: #ffffff;
+  --font-green: #6b8b74;
+
+  /* App font size */
+}
