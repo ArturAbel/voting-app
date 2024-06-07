@@ -1,8 +1,8 @@
-const candidates = [
+const electionCandidates = [
   {
     id: 1,
     fullName: "Chen Wei",
-    img: "https://example.com/images/jane.jpg",
+    img: "../assets/images/candidates/Chen.png",
     pronouns: "she/her",
     votesSummary: {
       totalVotes: 0,
@@ -15,7 +15,7 @@ const candidates = [
   {
     id: 2,
     fullName: "Jorge Paredes",
-    img: "https://example.com/images/john.jpg",
+    img: "../assets/images/candidates/Jorge.png",
     pronouns: "he/him",
     votesSummary: {
       totalVotes: 0,
@@ -27,7 +27,7 @@ const candidates = [
   {
     id: 3,
     fullName: "Isabella Rossi",
-    img: "https://example.com/images/alex.jpg",
+    img: "../assets/images/candidates/Isabella.png",
     pronouns: "they/them",
     votesSummary: {
       totalVotes: 0,
@@ -39,7 +39,7 @@ const candidates = [
   {
     id: 4,
     fullName: "Igor Petrov",
-    img: "https://example.com/images/john.jpg",
+    img: "../assets/images/candidates/Igor.png",
     pronouns: "Meow",
     votesSummary: {
       totalVotes: 0,
@@ -52,7 +52,7 @@ const candidates = [
   {
     id: 5,
     fullName: "Nneka Okafor",
-    img: "https://example.com/images/john.jpg",
+    img: "../assets/images/candidates/Nneka.png",
     pronouns: "he/him",
     votesSummary: {
       totalVotes: 0,
@@ -65,7 +65,7 @@ const candidates = [
   {
     id: 6,
     fullName: "Yoi Young",
-    img: "https://example.com/images/amina.jpg",
+    img: "../assets/images/candidates/Yoi.png",
     pronouns: "she/her",
     votesSummary: {
       totalVotes: 0,
@@ -76,4 +76,4 @@ const candidates = [
   },
 ];
 
-export default candidates;
+export default electionCandidates;

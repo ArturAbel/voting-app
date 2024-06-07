@@ -1,36 +1,43 @@
 import { LoginLoading } from "./LoginLoading/LoginLoading";
-import useFetchData from "../../hooks/useFetchData";
+import validateAdmin from "../../utils/validateAdmin";
+import { LoginError } from "./LoginError/LoginError";
 import validateUser from "../../utils/validateUser";
-import { votersURL } from "../../utils/variables";
 import findUser from "../../utils/findUser";
 import { Input } from "./Input/Input";
 import { useState } from "react";
 
 import "./LoginPage.css";
-import { LoginError } from "./LoginError/LoginError";
 
-export const LoginPage = ({ setValidUser, setUser }) => {
-  const { data, loading, error } = useFetchData(votersURL);
+export const LoginPage = ({
+  setValidUser,
+  setUser,
+  setIsAdmin,
+  users,
+  loading,
+  error,
+}) => {
   const [userError, setUserError] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
-    const user = findUser(data, email);
+    const user = findUser(users, email);
     const validUser = validateUser(user, password, email);
+    const isAdmin = validateAdmin(user);
+
     setUser(user);
     if (!validUser) {
       setUserError(true);
       return;
     }
     setValidUser(validUser);
+    setIsAdmin(isAdmin);
     setUserError(false);
   };
 
-  
   if (loading) return <LoginLoading />;
-  if (error) return <LoginError errorMessage={error}/>;
+  if (error) return <LoginError errorMessage={error} />;
   return (
     <section className="registration-section">
       <div className="registration-container">

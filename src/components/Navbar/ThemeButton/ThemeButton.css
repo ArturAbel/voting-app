@@ -1,0 +1,11 @@
+.theme-toggle__dark-side {
+  width: 3rem;
+  height: 3rem;
+  fill: currentColor;
+  background: transparent;
+  cursor: pointer;
+}
+.theme-toggle__dark-side:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}

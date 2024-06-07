@@ -1,0 +1,72 @@
+nav {
+  width: 100%;
+  height: 12vh;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-logo-container {
+  width: 20%;
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-icons-container {
+  width: 20%;
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.navbar-logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+.user-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.navbar-links-toggle {
+  background-image: url("../../assets/svg/links/hamburger.svg");
+  background-size: contain;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.navbar-links-toggle:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.links-container {
+  width: 13rem;
+  height: 15rem;
+  position: absolute;
+  right: 2%;
+  top: 12vh;
+  background-color: rgb(160, 160, 160);
+  padding: 1rem 0;
+}
+.links-user-name {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
