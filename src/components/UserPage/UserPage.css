@@ -1,9 +1,13 @@
 .user-section {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: darkkhaki;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 3;
+  position: relative;
+}
+
+.user-main{
+
 }

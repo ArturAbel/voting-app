@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState({});
 
   return (
-    <section>
+    <>
       {!validUser && (
         <LoginPage
           users={data}
@@ -24,7 +24,7 @@ function App() {
         />
       )}
       {validUser && <UserPage users={data} user={user} isAdmin={isAdmin} />}
-    </section>
+    </>
   );
 }
 

@@ -1,41 +1,14 @@
-.vote-section {
+.candidates-section {
   width: 100%;
-  height: 88vh;
-  background-color: rgb(51, 255, 255);
+  height: 80rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.candidates-container{
+  display: flex;
   gap: 2rem;
-}
-
-.vote-display {
-  width: 35rem;
-  height: 16rem;
-  border-radius: 10px;
-  background-color: white;
-  padding: 1rem;
-}
-
-.vote-candidates-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 54rem;
-  height: 30rem;
-  background-color: aliceblue;
-  gap: 1rem;
-}
-
-.vote-display-title {
-  font-size: 1.5rem;
-  text-align: center;
-  text-transform: capitalize;
-  margin: 1rem 0;
-}
-
-.vote-display-text {
-  text-transform: capitalize;
-  font-size: 1.4rem;
-  padding: 0 3rem;
 }

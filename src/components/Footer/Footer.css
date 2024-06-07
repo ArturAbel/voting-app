@@ -3,6 +3,7 @@ footer {
   height: 25rem;
   background-color: cornflowerblue;
   display: flex;
+  margin-top: 5rem;
 }
 
 .footer-left-container {
@@ -78,3 +79,4 @@ footer {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
+

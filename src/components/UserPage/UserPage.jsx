@@ -7,17 +7,18 @@ import { Navbar } from "../Navbar/Navbar";
 import "./UserPage.css";
 
 export const UserPage = ({ user, isAdmin, users }) => {
-
   return (
-    <>
-      <section className="user-section">
+    <section className="user-section">
+      <div className="user-main">
         <Navbar user={user} isAdmin={isAdmin} />
         <Routes>
-          <Route path="vote" element={<VotePage users={users}/>} />
+          <Route path="vote" element={<VotePage users={users} user={user} />} />
           <Route path="admin" element={<AdminPage />} />
         </Routes>
-      </section>
-      <Footer />
-    </>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </section>
   );
 };

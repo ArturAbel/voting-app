@@ -48,7 +48,6 @@ export const Footer = () => {
       <div className="footer-right-container">
         <ul className="footer-list">
           <li className="list-item">
-            {" "}
             <strong>Policies</strong>
           </li>
           <li className="list-item">
@@ -56,7 +55,7 @@ export const Footer = () => {
           </li>
           <li className="list-item">Privacy policy</li>
           <li className="list-item">Membership & Community</li>
-          <li className="list-item">Information policy   </li>
+          <li className="list-item">Information policy </li>
           <li className="list-item">Data & Registries</li>
           <li className="list-item">Energy policy</li>
           <li className="list-item">ACGMail</li>
