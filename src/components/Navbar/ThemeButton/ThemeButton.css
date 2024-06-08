@@ -6,10 +6,10 @@
   cursor: pointer;
 }
 
-.light{
+.light {
   transform: rotate(0);
 }
-.dark{
+.dark {
   transform: rotate(180deg);
   filter: brightness(500%);
 }

@@ -28,9 +28,9 @@
   text-align: right;
 }
 
-.voted{
+.voted {
   color: green;
 }
-.didNot{
+.didNot {
   color: rgb(255, 0, 0);
 }

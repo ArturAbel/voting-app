@@ -6,8 +6,6 @@ import { useState } from "react";
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
-
-
   const [showLinks, setShowLinks] = useState(false);
   const { fullName, image } = user;
 
@@ -34,11 +32,13 @@ export const Navbar = ({ user, isAdmin }) => {
         <div className="links-container" onMouseLeave={hideLinks}>
           <ul className="navbar-links">
             <li>
-              <CustomLink to={"vote"}>vote</CustomLink>
+              <CustomLink to={"/"}>vote</CustomLink>
             </li>
             <li>{isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}</li>
             <li>
-              <a href="http://localhost:5173/vote">logout</a>
+              <li>
+                <CustomLink to={"/logout"}>logout</CustomLink>
+              </li>
             </li>
           </ul>
         </div>
