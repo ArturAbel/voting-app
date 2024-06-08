@@ -1,0 +1,15 @@
+.theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: currentColor;
+  background: transparent;
+  cursor: pointer;
+}
+
+.light{
+  transform: rotate(0);
+}
+.dark{
+  transform: rotate(180deg);
+  filter: brightness(500%);
+}

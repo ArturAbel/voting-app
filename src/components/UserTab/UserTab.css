@@ -1,0 +1,36 @@
+.user-tab-div {
+  font-size: var(--fontSize-admin-user-tab);
+  text-align: center;
+  margin: 0.5rem 0;
+  display: flex;
+  width: 100%;
+  gap: 4rem;
+}
+
+.user-tab-image img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.user-tab-name {
+  width: 15%;
+  text-align: left;
+}
+
+.user-tab-email,
+.user-tab-image {
+  width: 15%;
+}
+
+.user-tab-vote {
+  width: 30%;
+  text-align: right;
+}
+
+.voted{
+  color: green;
+}
+.didNot{
+  color: rgb(255, 0, 0);
+}

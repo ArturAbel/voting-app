@@ -1,0 +1,66 @@
+.registration-section {
+  background-color: var(--background-secondary);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+.registration-container {
+  background-color: var(--background-white);
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  height: 40rem;
+  width: 30rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.registration-logo {
+  height: 10rem;
+  width: 10rem;
+}
+
+.registration-form {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.registration-loader-container {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+}
+
+.registration-title {
+  font-size: var(--fontSize-registration-title);
+}
+.registration-button {
+  background-color: var(--background-secondary);
+  margin-top: 1rem;
+  cursor: pointer;
+  height: 2.4rem;
+  border: none;
+  width: 10rem;
+}
+.registration-button:hover {
+  opacity: 0.6;
+}
+
+.registration-error {
+  font-size: var(--fontSize-registration-error);
+  background-color: var(--background-error);
+  padding: 0.5rem;
+}

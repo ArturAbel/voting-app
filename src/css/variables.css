@@ -1,11 +1,13 @@
 :root {
   /* App background colors */
   --background-dark: #2d2d2d;
-  --background-main: #ffffff;
+  --background-white: #ffffff;
   --background-secondary: #f5f5f5;
-  --background-green: #6b8b74;
+  --background-light: #eee;
+  --background-candidate-cards: #3F88C5 ;
   --background-light-green: #92a498;
   --background-purple: #827fc3;
+  --background-error: rgb(250, 178, 178);
 
   /* App font color */
   --font-dark: #2d2d2d;
@@ -13,4 +15,14 @@
   --font-green: #6b8b74;
 
   /* App font size */
+  --fontSize-admin-title: 2rem;
+  --fontSize-registration-title: 2.5rem;
+  --fontSize-registration-error: 1.3rem;
+  --fontSize-navbar-links: 1.5rem;
+  --fontSize-candidate-card-name: 2rem;
+  --fontSize-admin-user-tab: 1.2rem;
+  --fontSize-footer-slogan: 1.3rem;
+  --fontSize-footer-listItem: 1.5rem;
+  --fontSize-footer-copyrights: 1.3rem;
+  --fontSize-footer-address: 1.2rem;
 }
