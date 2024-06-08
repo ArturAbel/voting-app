@@ -6,8 +6,6 @@ import { useState } from "react";
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
-
-
   const [showLinks, setShowLinks] = useState(false);
   const { fullName, image } = user;
 
@@ -38,7 +36,7 @@ export const Navbar = ({ user, isAdmin }) => {
             </li>
             <li>{isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}</li>
             <li>
-              <a href="http://localhost:5173/vote">logout</a>
+            <li><CustomLink  to={"login"}>logout</CustomLink></li>
             </li>
           </ul>
         </div>
