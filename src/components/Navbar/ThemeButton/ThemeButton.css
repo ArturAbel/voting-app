@@ -1,11 +1,15 @@
-.theme-toggle__dark-side {
+.theme-toggle {
   width: 2.5rem;
   height: 2.5rem;
   fill: currentColor;
   background: transparent;
   cursor: pointer;
 }
-.theme-toggle__dark-side:hover {
-  transform: scale(1.2);
-  transition: 0.5s;
+
+.light{
+  transform: rotate(0);
+}
+.dark{
+  transform: rotate(180deg);
+  filter: brightness(500%);
 }

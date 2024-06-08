@@ -1,15 +1,13 @@
 footer {
-  width: 100%;
-  height: 25rem;
-  background-color: cornflowerblue;
-  display: flex;
   margin-top: 5rem;
+  display: flex;
+  height: 28rem;
+  width: 100%;
 }
 
 .footer-left-container {
   width: 50%;
   height: 100%;
-  background-color: cornsilk;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -18,13 +16,13 @@ footer {
 }
 
 .footer-right-container {
-  width: 50%;
-  height: 100%;
-  background-color: rgb(130, 130, 130);
-  display: flex;
   align-items: center;
   padding-left: 10rem;
   padding-right: 5rem;
+  display: flex;
+  align-items: baseline;
+  height: 100%;
+  width: 50%;
 }
 
 .footer-social-icons {
@@ -34,17 +32,24 @@ footer {
   gap: 1.2rem;
   align-items: center;
 }
+.social-icon {
+  transition: 0.6s;
+}
 
+.social-icon:hover {
+  transform: scale(1.2);
+}
 .footer-get-in-touch {
   text-transform: capitalize;
+  margin-bottom: 1rem;
   font-size: 3rem;
 }
 
 .footer-slogan {
+  font-size: var(--fontSize-footer-slogan);
+  margin: 0.5rem 0;
   display: block;
   width: 60%;
-  margin: 0.5rem 0;
-  font-size: 1.4rem;
 }
 
 .social-icon {
@@ -53,21 +58,21 @@ footer {
 }
 
 .footer-list {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 3.5rem);
+  grid-template-rows: repeat(4, 3rem);
+  grid-template-columns: 10em 10em;
   font-size: 1.3rem;
+  display: grid;
+  width: 80%;
   gap: 1rem;
 }
 
 .footer-address {
-  font-size: 1.3rem;
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
+  font-size: var(--fontSize-footer-address);
   margin-left: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .footer-seal {
@@ -76,7 +81,13 @@ footer {
 }
 
 .footer-copyrights {
-  font-size: 1.3rem;
+  font-size: var(--fontSize-footer-copyrights);
   margin-bottom: 0.5rem;
 }
 
+.list-item-title {
+  font-size: var(--fontSize-footer-listItem);
+}
+.list-item a {
+  color: inherit;
+}

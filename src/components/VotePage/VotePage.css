@@ -5,10 +5,9 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  box-sizing: border-box;
 }
 
-.candidates-container{
+.candidates-container {
   display: flex;
   gap: 2rem;
 }

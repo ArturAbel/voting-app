@@ -1,9 +1,10 @@
-import { LoginLoading } from "./LoginLoading/LoginLoading";
+import { LoginLoading } from "../../components/LoginLoading/LoginLoading";
+import { LoginError } from "../../components/LoginError/LoginError";
 import validateAdmin from "../../utils/validateAdmin";
-import { LoginError } from "./LoginError/LoginError";
 import validateUser from "../../utils/validateUser";
+import { Input } from "../../components/Input/Input";
+import { logoWithText } from "../../utils/variables";
 import findUser from "../../utils/findUser";
-import { Input } from "./Input/Input";
 import { useState } from "react";
 
 import "./LoginPage.css";
@@ -41,14 +42,10 @@ export const LoginPage = ({
   return (
     <section className="registration-section">
       <div className="registration-container">
-        <img
-          className="registration-logo"
-          src="../../assets/svg/logo/logo.svg"
-          alt="logo"
-        />
+        <img className="registration-logo" src={logoWithText} alt="logo" />
         <h3 className="registration-title">Welcome</h3>
         <form className="registration-form" action="">
-          {userError && <p>Email or Password are incorrect</p>}
+          {userError && <p className="registration-error">Email or Password are incorrect</p>}
           <Input
             type={"email"}
             name={"email"}
@@ -68,7 +65,10 @@ export const LoginPage = ({
           </button>
         </form>
         <p className="registration-sign">
-          dont have an account? <a href=""></a>sign up
+          dont have an account?
+          <a href="">
+            <strong>sign up</strong>
+          </a>
         </p>
       </div>
     </section>

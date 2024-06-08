@@ -1,3 +1,11 @@
+import {
+  facebookIcon,
+  linkedinIcon,
+  xIcon,
+  youtubeIcon,
+  sealIcon,
+} from "../../utils/variables";
+
 import "./Footer.css";
 
 export const Footer = () => {
@@ -6,39 +14,21 @@ export const Footer = () => {
       <div className="footer-left-container">
         <h2 className="footer-get-in-touch">get in touch</h2>
         <div className="footer-slogan">
-          <p>
-            At Liberty Hill College, we empower every student to soar to new
-            heights. Join us and forge a future full of limitless possibilities.
-          </p>
+          At Liberty Hill College, we empower every student to soar to new
+          heights. Join us and forge a future full of limitless possibilities.
         </div>
         <div className="footer-social-icons">
           <a href="">
-            <img
-              className="social-icon"
-              src="../../assets/svg/socials/facebook.svg"
-              alt="facebook"
-            />
+            <img className="social-icon" src={facebookIcon} alt="facebook" />
           </a>
           <a href="">
-            <img
-              className="social-icon"
-              src="../../assets/svg/socials/linkedin.svg"
-              alt="facebook"
-            />
+            <img className="social-icon" src={linkedinIcon} alt="linkedin" />
           </a>
           <a href="">
-            <img
-              className="social-icon"
-              src="../../assets/svg/socials/x.svg"
-              alt="facebook"
-            />
+            <img className="social-icon" src={xIcon} alt="x" />
           </a>
           <a href="">
-            <img
-              className="social-icon"
-              src="../../assets/svg/socials/youtube.svg"
-              alt="facebook"
-            />
+            <img className="social-icon" src={youtubeIcon} alt="youtube" />
           </a>
         </div>
         <p className="footer-copyrights">
@@ -47,18 +37,30 @@ export const Footer = () => {
       </div>
       <div className="footer-right-container">
         <ul className="footer-list">
-          <li className="list-item">
+          <li className="list-item-title">
             <strong>Policies</strong>
           </li>
-          <li className="list-item">
+          <li className="list-item-title">
             <strong>Overview</strong>
           </li>
-          <li className="list-item">Privacy policy</li>
-          <li className="list-item">Membership & Community</li>
-          <li className="list-item">Information policy </li>
-          <li className="list-item">Data & Registries</li>
-          <li className="list-item">Energy policy</li>
-          <li className="list-item">ACGMail</li>
+          <li className="list-item">
+            <a href="">Privacy policy</a>
+          </li>
+          <li className="list-item">
+            <a href="">Membership & Community</a>
+          </li>
+          <li className="list-item">
+            <a href="">Information policy</a>
+          </li>
+          <li className="list-item">
+            <a href="">Data & Registries</a>
+          </li>
+          <li className="list-item">
+            <a href="">Energy policy</a>
+          </li>
+          <li className="list-item">
+            <a href="">ACGMail</a>
+          </li>
         </ul>
         <div className="footer-address">
           <p>
@@ -69,8 +71,8 @@ export const Footer = () => {
           <p>Phone: (555) 123-4567</p>
           <img
             className="footer-seal"
-            src="../../assets/svg/app/seal.svg"
-            alt=""
+            src={sealIcon}
+            alt="seal"
           />
         </div>
       </div>

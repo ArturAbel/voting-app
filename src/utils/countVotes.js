@@ -19,18 +19,11 @@ export const updateCandidatesVotes = (users, candidates) => {
   });
   return updatedVoteScore;
 };
-
-
-
-
-
+// Filter all voters with true
 export const filterVoters = (users) => {
   return users.filter((user) => user.isVoted === true);
 };
-
-
-
-
+// Creates Array
 const createVotesArray = (voters) => {
   return voters.map((voter) => voter.candidate);
 };

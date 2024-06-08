@@ -1,38 +1,45 @@
 import { ThemeButton } from "./ThemeButton/ThemeButton";
 import { CustomLink } from "./CustomLink/CustomLink";
-import { Link } from "react-router-dom";
+import { logo } from "../../utils/variables.js";
 import { useState } from "react";
 
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
+
+
   const [showLinks, setShowLinks] = useState(false);
+  const { fullName, image } = user;
 
   const toggleLinks = () => {
-    setShowLinks(!showLinks);
+    setShowLinks(true);
+  };
+
+  const hideLinks = () => {
+    setShowLinks(false);
   };
 
   return (
     <nav>
       <div className="navbar-logo-container">
-        <img
-          className="navbar-logo"
-          src="../../assets/svg/logo/logo.svg"
-          alt="logo"
-        />
+        <img className="navbar-logo" src={logo} alt="logo" />
       </div>
+      <p className="navbar-user-name">{fullName}</p>
       <div className="navbar-icons-container">
         <ThemeButton />
-        <img className="user-image" src={user.image}></img>
+        <img className="user-image" alt={fullName} src={image}></img>
         <div className="navbar-links-toggle" onMouseOver={toggleLinks}></div>
       </div>
       {showLinks && (
-        <div className="links-container">
-          <p className="links-user-name">{user.fullName}</p>
+        <div className="links-container" onMouseLeave={hideLinks}>
           <ul className="navbar-links">
-            <CustomLink to={"vote"}>vote</CustomLink>
-            {isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}
-            <CustomLink to={"logout"}>logout</CustomLink>
+            <li>
+              <CustomLink to={"vote"}>vote</CustomLink>
+            </li>
+            <li>{isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}</li>
+            <li>
+              <a href="http://localhost:5173/vote">logout</a>
+            </li>
           </ul>
         </div>
       )}

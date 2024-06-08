@@ -1,5 +1,6 @@
-import { LoginPage } from "./components/LoginPage/LoginPage";
-import { UserPage } from "./components/UserPage/UserPage";
+import { ThemeProvider } from "./context/ThemeContext";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { UserPage } from "./pages/UserPage/UserPage";
 import useFetchData from "./hooks/useFetchData";
 import { votersURL } from "./utils/variables";
 import { useState } from "react";
@@ -11,7 +12,7 @@ function App() {
   const [user, setUser] = useState({});
 
   return (
-    <>
+    <ThemeProvider>
       {!validUser && (
         <LoginPage
           users={data}
@@ -24,7 +25,7 @@ function App() {
         />
       )}
       {validUser && <UserPage users={data} user={user} isAdmin={isAdmin} />}
-    </>
+    </ThemeProvider>
   );
 }
 

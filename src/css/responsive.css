@@ -1,0 +1,73 @@
+@media screen and (max-width: 400px) {
+  body {
+    height: 100%;
+  }
+  nav {
+    justify-content: space-between;
+    display: flex;
+    padding: 1rem 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .navbar-user-name,
+  .navbar-logo {
+    display: none;
+  }
+
+  .navbar-icons-container {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .registration-loader {
+    font-size: 4rem;
+  }
+  .candidates-section {
+    width: 100%;
+    height: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem;
+  }
+
+  .candidate-section {
+    width: 90%;
+    height: 90%;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .candidates-container {
+    flex-direction: column;
+    gap: 15rem;
+  }
+  .item-1 {
+    transform: translateY(0rem);
+  }
+  .item-2 {
+    transform: translateY(0rem);
+  }
+  .item-3 {
+    transform: translateY(0rem);
+  }
+  .item-4 {
+    transform: translateY(0rem);
+  }
+  .item-5 {
+    transform: translateY(0rem);
+  }
+
+  footer {
+    height: 100%;
+    flex-direction: column;
+  }
+  .footer-right-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .footer-copyrights {
+    width: 100%;
+  }
+}
