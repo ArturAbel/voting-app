@@ -14,7 +14,7 @@ export const UserPage = ({ user, isAdmin, users }) => {
       <div>
         <Navbar user={user} isAdmin={isAdmin} />
         <Routes>
-          <Route path="vote" element={<VotePage users={users} user={user} />} />
+          <Route path="/" element={<VotePage users={users} user={user} />} />
           <Route path="admin" element={<AdminPage users={users} />} />
         </Routes>
       </div>

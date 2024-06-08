@@ -32,11 +32,13 @@ export const Navbar = ({ user, isAdmin }) => {
         <div className="links-container" onMouseLeave={hideLinks}>
           <ul className="navbar-links">
             <li>
-              <CustomLink to={"vote"}>vote</CustomLink>
+              <CustomLink to={"/"}>vote</CustomLink>
             </li>
             <li>{isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}</li>
             <li>
-            <li><CustomLink  to={"login"}>logout</CustomLink></li>
+              <li>
+                <CustomLink to={"/logout"}>logout</CustomLink>
+              </li>
             </li>
           </ul>
         </div>
