@@ -1,7 +1,9 @@
+import { useThemeContext } from "../../context/ThemeContext.jsx";
 import { ThemeButton } from "./ThemeButton/ThemeButton";
 import { CustomLink } from "./CustomLink/CustomLink";
 import { logo } from "../../utils/variables.js";
 import { useState } from "react";
+
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
@@ -16,10 +18,16 @@ export const Navbar = ({ user, isAdmin }) => {
     setShowLinks(false);
   };
 
+  const { darkTheme } = useThemeContext();
+
   return (
     <nav>
       <div className="navbar-logo-container">
-        <img className="navbar-logo" src={logo} alt="logo" />
+        <img
+          className={`navbar-logo ${darkTheme ? "logoDark" : ""}`}
+          src={logo}
+          alt="logo"
+        />
       </div>
       <p className="navbar-user-name">{fullName}</p>
       <div className="navbar-icons-container">

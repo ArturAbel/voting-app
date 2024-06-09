@@ -8,7 +8,17 @@
   height: 100%;
 }
 
+.vote-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  font-size: 3.5rem;
+  text-transform: capitalize;
+}
+
 .darkSection{
   background-color: var(--background-dark);
   color: var(--font-light);
 }
+

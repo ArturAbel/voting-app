@@ -14,6 +14,7 @@ export const UserPage = ({ user, isAdmin, users }) => {
     <section className={`user-section ${darkTheme ? "darkSection" : ""}`}>
       <div>
         <Navbar user={user} isAdmin={isAdmin} />
+        <h3 className="vote-title">liberty hill college elections</h3>
         <Routes>
           <Route path="/" element={<VotePage users={users} user={user} />} />
           <Route path="admin" element={<AdminPage users={users} />} />
