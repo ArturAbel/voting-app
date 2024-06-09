@@ -32,9 +32,8 @@
     padding: 0;
   }
 
-  .vote-title{
+  .vote-title {
     font-size: 2rem;
-
   }
 
   .candidates-container {
@@ -76,6 +75,16 @@
     left: 14rem;
   }
 
+  .numberDark{
+    background: var(--background-dark);
+    filter: brightness(300%);
+
+  }
+  
+  .face.back .agenda{
+    font-size: 1.1rem;
+  }
+
   .item-1 {
     transform: translateY(0rem);
   }
@@ -103,13 +112,13 @@
     margin-top: 3rem;
     gap: 2rem;
   }
-  .footer-copyrights{
+  .footer-copyrights {
     display: none;
   }
   .footer-left-container {
     width: 100%;
   }
-  .footer-address{
+  .footer-address {
     width: 60%;
   }
 
@@ -120,7 +129,7 @@
     height: 100%;
     flex-direction: column;
   }
-  .footer-address{
+  .footer-address {
     padding: 0;
   }
   .admin-container {
@@ -136,6 +145,4 @@
   .user-tab-vote {
     width: 100%;
   }
-
-
 }
