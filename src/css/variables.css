@@ -4,10 +4,11 @@
   --background-white: #ffffff;
   --background-secondary: #f5f5f5;
   --background-light: #eee;
-  --background-candidate-cards: #3F88C5 ;
-  --background-light-green: #92a498;
-  --background-purple: #827fc3;
+  --background-candidate-cards: #EF767A ;
   --background-error: rgb(250, 178, 178);
+
+  /* Filter */
+  --filter-like-icon: invert(58%) sepia(52%) saturate(2698%) hue-rotate(315deg) brightness(103%) contrast(87%);
 
   /* App font color */
   --font-dark: #2d2d2d;

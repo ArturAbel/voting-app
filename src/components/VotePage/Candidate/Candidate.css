@@ -14,7 +14,7 @@
 .candidate-card {
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
   background: var(--background-white);
-  border-radius: 10px;
+  border-radius: 15px;
   position: relative;
   margin: 0 auto;
   height: 22rem;
@@ -86,11 +86,11 @@
 }
 
 .like-icon {
-  width: 100%;
-  height: 10rem;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  height: 10rem;
+  width: 100%;
 }
 .like-icon img {
   width: 3rem;
@@ -100,9 +100,8 @@
 }
 
 .like-icon img:hover {
+  filter: var(--filter-like-icon);
   transform: scale(1.2);
-  filter: invert(53%) sepia(40%) saturate(758%) hue-rotate(165deg)
-    brightness(85%) contrast(88%);
 }
 
 .count {
@@ -137,14 +136,13 @@
 }
 
 .selectedCandidate {
-  opacity: 1;
   filter: grayscale(0);
+  opacity: 1;
 }
 
 .selectedCandidate .like-icon img {
+  filter: var(--filter-like-icon);
   transform: scale(1.2);
-  filter: invert(53%) sepia(40%) saturate(758%) hue-rotate(165deg)
-    brightness(85%) contrast(88%);
 }
 
 .pronounce {

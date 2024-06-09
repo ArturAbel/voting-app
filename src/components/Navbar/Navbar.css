@@ -44,8 +44,9 @@ nav {
   background-image: url("../../assets/svg/links/hamburger.svg");
   background-size: contain;
   cursor: pointer;
-  width: 4rem;
+  border: none;
   height: 4rem;
+  width: 4rem;
 }
 
 .navbar-links-toggle:hover {

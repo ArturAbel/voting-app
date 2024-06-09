@@ -4,6 +4,7 @@ import validateAdmin from "../../utils/validateAdmin";
 import validateUser from "../../utils/validateUser";
 import { Input } from "../../components/Input/Input";
 import { logoWithText } from "../../utils/variables";
+import { useNavigate } from "react-router-dom";
 import findUser from "../../utils/findUser";
 import { useState } from "react";
 
@@ -20,6 +21,7 @@ export const LoginPage = ({
   const [userError, setUserError] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -35,6 +37,7 @@ export const LoginPage = ({
     setValidUser(validUser);
     setIsAdmin(isAdmin);
     setUserError(false);
+    navigate("/user");
   };
 
   if (loading) return <LoginLoading />;
@@ -45,7 +48,11 @@ export const LoginPage = ({
         <img className="registration-logo" src={logoWithText} alt="logo" />
         <h3 className="registration-title">Welcome</h3>
         <form className="registration-form" action="">
-          {userError && <p className="registration-error">Email or Password are incorrect</p>}
+          {userError && (
+            <p className="registration-error">
+              Email or Password are incorrect
+            </p>
+          )}
           <Input
             type={"email"}
             name={"email"}
