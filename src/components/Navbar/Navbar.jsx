@@ -2,7 +2,6 @@ import { ThemeButton } from "./ThemeButton/ThemeButton";
 import { CustomLink } from "./CustomLink/CustomLink";
 import { logo } from "../../utils/variables.js";
 import { useState } from "react";
-
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
@@ -10,7 +9,7 @@ export const Navbar = ({ user, isAdmin }) => {
   const { fullName, image } = user;
 
   const toggleLinks = () => {
-    setShowLinks(true);
+    setShowLinks((prevShowLinks) => !prevShowLinks);
   };
 
   const hideLinks = () => {
@@ -26,19 +25,24 @@ export const Navbar = ({ user, isAdmin }) => {
       <div className="navbar-icons-container">
         <ThemeButton />
         <img className="user-image" alt={fullName} src={image}></img>
-        <div className="navbar-links-toggle" onMouseOver={toggleLinks}></div>
+        <button
+          className="navbar-links-toggle"
+          onMouseOver={toggleLinks}
+        ></button>
       </div>
       {showLinks && (
         <div className="links-container" onMouseLeave={hideLinks}>
           <ul className="navbar-links">
             <li>
-              <CustomLink to={"/"}>vote</CustomLink>
+              <CustomLink to="/user">vote</CustomLink>
             </li>
-            <li>{isAdmin && <CustomLink to={"admin"}>admin</CustomLink>}</li>
-            <li>
+            {isAdmin && (
               <li>
-                <CustomLink to={"/logout"}>logout</CustomLink>
+                <CustomLink to="/admin">admin</CustomLink>
               </li>
+            )}
+            <li>
+              <CustomLink to="/">logout</CustomLink>
             </li>
           </ul>
         </div>

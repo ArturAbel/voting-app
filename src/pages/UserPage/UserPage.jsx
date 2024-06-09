@@ -3,12 +3,13 @@ import { useThemeContext } from "../../context/ThemeContext";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { AdminPage } from "../AdminPage/AdminPage";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./UserPage.css";
 
 export const UserPage = ({ user, isAdmin, users }) => {
   const { darkTheme } = useThemeContext();
+
   return (
     <section className={`user-section ${darkTheme ? "darkSection" : ""}`}>
       <div>
