@@ -38,7 +38,7 @@ export const Candidate = ({
           {totalVotes}
         </span>
         <div className="candidate-card">
-          <div className="face back">
+          <div className={`face back ${darkTheme ? "cardDark" : ""}`}>
             <div className="content">
               <p className="pronounce">{pronouns}</p>
               <p className="agenda">{agenda}</p>

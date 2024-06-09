@@ -61,7 +61,7 @@
 }
 
 .face.front b {
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 5px rgba(205, 37, 37, 0.2);
   transition: 0.5s;
   z-index: 10;
   padding: 0;
@@ -78,7 +78,7 @@
 
 .face.front {
   background-color: var(--background-candidate-cards);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .candidate-container:hover .candidate-image {
@@ -109,7 +109,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 50px;
   position: absolute;
   padding-top: 0.5rem;
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: 1.5rem;
   text-align: center;
   overflow: hidden;
@@ -156,4 +156,9 @@
 .numberDark {
   background: var(--background-dark);
   filter: brightness(200%);
+}
+.cardDark{
+  background-color: var(--background-dark);
+  filter: brightness(150%);
+  border-radius: 15px;
 }
