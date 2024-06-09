@@ -1,3 +1,4 @@
+
 import {
   facebookIcon,
   linkedinIcon,
@@ -7,6 +8,7 @@ import {
 } from "../../utils/variables";
 
 import "./Footer.css";
+
 
 export const Footer = () => {
   return (
@@ -69,11 +71,7 @@ export const Footer = () => {
           </p>
           <p>Email: info@libertyhillcollege.edu</p>
           <p>Phone: (555) 123-4567</p>
-          <img
-            className="footer-seal"
-            src={sealIcon}
-            alt="seal"
-          />
+          <img className="footer-seal" src={sealIcon} alt="seal" />
         </div>
       </div>
     </footer>

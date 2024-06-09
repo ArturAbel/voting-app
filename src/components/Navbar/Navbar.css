@@ -78,8 +78,12 @@ nav {
   gap: 1rem;
 }
 
-.navbar-links a{
+.navbar-links a {
   color: inherit;
+}
+
+.logoDark {
+  filter: brightness(10000%);
 }
 
 /* CustomLink Video */
