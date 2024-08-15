@@ -36,8 +36,8 @@ The College Elections Voting App is a web application developed as part of a wee
 <a name="images"></a>
 ## Images
 
-![User Voting Page](public/assets/readme/voting.jpg)
-![Admin Dashboard](public/assets/readme/admin.jpg)
+![User Voting Page](public/assets/readme/1.jpg)
+![Admin Dashboard](public/assets/readme/2.jpg)
 
 <a name="technologies"></a>
 ## Technologies Used
