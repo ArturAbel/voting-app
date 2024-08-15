@@ -1,61 +1,65 @@
 # College Elections Voting App
 
-Welcome to the College Elections Voting App! This project was developed as part of a weekend bootcamp task to create a voting application. The app fetches a list of users from a mock API and allows users to vote for one of five candidates. The theme chosen for this project is college elections.
+[Features](#features) | [Login Details](#login-details) | [Project Structure](#project-structure) | [Images](#images) | [Technologies](#technologies) | [Usage](#usage) | [License](#license)
 
-## Login Details
-1. #### Admin User
-Email: Ike74@gmail.com
+The College Elections Voting App is a web application developed as part of a weekend bootcamp task. It allows users to vote in a college election and provides an admin dashboard to manage and view election results.
 
-Password: j9TU3qYoqGFnecx
-
-2. #### User
-Email: Alfred26@yahoo.com
-
-Password: 8qKLzxc6gMGA_cw
-
-
-3. #### User That Have Not Voted
-Email: Israel.Herzog@yahoo.com
-
-Password: VEs021ROjOLqSb3
-<br>
-
-
+<a name="features"></a>
 ## Features
 
-- **User Authentication:** Users can log in using their email and password.
+- **User Authentication:** Secure login for users and admin.
 - **Voting System:** Users can vote for one of five candidates.
-- **Admin Dashboard:** Admin users can view a list of users and a graphical representation of the voting results.
+- **Admin Dashboard:** Admins can view a list of users and see a graphical representation of voting results.
 
+<a name="login-details"></a>
+## Login Details
+
+1. **Admin User**  
+   - **Email:** Ike74@gmail.com  
+   - **Password:** j9TU3qYoqGFnecx  
+
+2. **Regular User**  
+   - **Email:** Alfred26@yahoo.com  
+   - **Password:** 8qKLzxc6gMGA_cw  
+
+3. **User Who Has Not Voted**  
+   - **Email:** Israel.Herzog@yahoo.com  
+   - **Password:** VEs021ROjOLqSb3
+
+<a name="project-structure"></a>
 ## Project Structure
 
-The project consists of several key components:
+- **LoginPage:** Handles authentication and redirects based on user role.
+- **UserPage:** Voting interface for regular users.
+- **AdminPage:** Overview of users and voting results, with a pie chart for admins.
 
-- **LoginPage:** Handles user authentication and redirects users to the voting page or admin dashboard based on their role.
-- **UserPage:** Displays the voting interface for regular users.
-- **AdminPage:** Provides an overview of users and a pie chart representing the voting results for admin users.
+<a name="images"></a>
+## Images
 
-## Usage
+![User Voting Page](public/assets/readme/voting.jpg)
+![Admin Dashboard](public/assets/readme/admin.jpg)
 
-- **Login:** Users can log in with their email and password. Admin users will have access to additional features.
-- **Vote:** Users can vote for their preferred candidate.
-- **Admin Dashboard:** Admin users can view the list of users and a pie chart showing the voting results.
-
+<a name="technologies"></a>
 ## Technologies Used
 
-- React
-- React Router
-- CSS
-- Mock API
+- **Frontend:** React
+- **Routing:** React Router
+- **Styles:** CSS
+- **Data:** Mock API
 
+<a name="usage"></a>
+## Usage
+
+1. **Login:** Users log in with their credentials; admins access additional features.
+2. **Vote:** Users select their preferred candidate.
+3. **Admin Dashboard:** Admins view user lists and voting results.
+
+<a name="license"></a>
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or suggestions, feel free to contact me at abelartur.mail@gmail.com or on [GitHub](https://github.com/yourusername).
+For any questions or suggestions, feel free to contact me at [abelartur.mail@gmail.com](mailto:abelartur.mail@gmail.com).
 
----
-
-Happy coding!
