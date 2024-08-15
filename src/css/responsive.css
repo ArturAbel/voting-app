@@ -75,13 +75,12 @@
     left: 14rem;
   }
 
-  .numberDark{
+  .numberDark {
     background: var(--background-dark);
     filter: brightness(300%);
-
   }
-  
-  .face.back .agenda{
+
+  .face.back .agenda {
     font-size: 1.1rem;
   }
 

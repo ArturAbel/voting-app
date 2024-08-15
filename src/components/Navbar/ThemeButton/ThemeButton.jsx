@@ -3,7 +3,7 @@ import { useThemeContext } from "../../../context/ThemeContext";
 import "./ThemeButton.css";
 
 export const ThemeButton = () => {
-  const {toggleTheme, darkTheme} = useThemeContext()
+  const {toggleTheme, darkTheme} = useThemeContext();
 
   
   return (
