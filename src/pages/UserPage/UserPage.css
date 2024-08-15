@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.vote-title{
+.vote-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,8 +17,7 @@
   text-transform: capitalize;
 }
 
-.darkSection{
+.darkSection {
   background-color: var(--background-dark);
   color: var(--font-light);
 }
-

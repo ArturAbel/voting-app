@@ -157,7 +157,7 @@
   background: var(--background-dark);
   filter: brightness(200%);
 }
-.cardDark{
+.cardDark {
   background-color: var(--background-dark);
   filter: brightness(150%);
   border-radius: 15px;
