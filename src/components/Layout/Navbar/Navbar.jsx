@@ -1,14 +1,13 @@
-import { useThemeContext } from "../../context/ThemeContext.jsx";
-import { ThemeButton } from "./ThemeButton/ThemeButton";
-import { CustomLink } from "./CustomLink/CustomLink";
-import { logo } from "../../utils/variables.js";
+import { useThemeContext } from "../../../context/ThemeContext.jsx";
+import { ThemeButton } from "./ThemeButton/ThemeButton.jsx";
+import { CustomLink } from "./CustomLink/CustomLink.jsx";
+import { logo } from "../../../utils/variables.js";
 import { useState } from "react";
 
 import "./Navbar.css";
 
 export const Navbar = ({ user, isAdmin }) => {
   const [showLinks, setShowLinks] = useState(false);
-  const { fullName, image } = user;
 
   const toggleLinks = () => {
     setShowLinks((prevShowLinks) => !prevShowLinks);
@@ -23,20 +22,13 @@ export const Navbar = ({ user, isAdmin }) => {
   return (
     <nav>
       <div className="navbar-logo-container">
-        <img
-          className={`navbar-logo ${darkTheme ? "logoDark" : ""}`}
-          src={logo}
-          alt="logo"
-        />
+        <img className={`navbar-logo ${darkTheme ? "logoDark" : ""}`} src={logo} alt="logo" />
       </div>
-      <p className="navbar-user-name">{fullName}</p>
+      <p className="navbar-user-name">{""}</p>
       <div className="navbar-icons-container">
         <ThemeButton />
-        <img className="user-image" alt={fullName} src={image}></img>
-        <button
-          className="navbar-links-toggle"
-          onMouseOver={toggleLinks}
-        ></button>
+        <img className="user-image" alt={""}></img>
+        <button className="navbar-links-toggle" onMouseOver={toggleLinks}></button>
       </div>
       {showLinks && (
         <div className="links-container" onMouseLeave={hideLinks}>

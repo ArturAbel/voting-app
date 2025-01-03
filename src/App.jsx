@@ -1,57 +1,42 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { ThemeProvider } from "./context/ThemeContext";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { AdminPage } from "./pages/AdminPage/AdminPage";
+import { ThemeProvider } from "./context/ThemeContext";
 import { UserPage } from "./pages/UserPage/UserPage";
-import useFetchData from "./hooks/useFetchData";
-import { votersURL } from "./utils/variables";
-import { useState } from "react";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
-  const { data, loading, error } = useFetchData(votersURL);
-  const [validUser, setValidUser] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [user, setUser] = useState({});
+  const routes = [
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <UserPage />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/admin",
+      element: (
+        <ProtectedRoute>
+          <AdminPage />
+        </ProtectedRoute>
+      ),
+    },
+  ];
+
+  const router = createBrowserRouter(routes);
 
   return (
     <ThemeProvider>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <LoginPage
-              users={data}
-              loading={loading}
-              error={error}
-              setValidUser={setValidUser}
-              setUser={setUser}
-              user={user}
-              setIsAdmin={setIsAdmin}
-            />
-          }
-        />
-        <Route
-          path="/user"
-          element={
-            validUser ? (
-              <UserPage users={data} user={user} isAdmin={isAdmin} />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-        <Route />
-        <Route
-          path="/admin"
-          element={
-            validUser && isAdmin ? (
-              <AdminPage users={data} />
-            ) : (
-              <Navigate to="/user" />
-            )
-          }
-        />
-      </Routes>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

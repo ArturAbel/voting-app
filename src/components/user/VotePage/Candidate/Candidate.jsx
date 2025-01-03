@@ -1,6 +1,6 @@
-import { useThemeContext } from "../../../context/ThemeContext";
-import { setUserVote } from "../../../utils/setUserVote";
-import { likeIcon } from "../../../utils/variables";
+import { useThemeContext } from "../../../../context/ThemeContext";
+import { setUserVote } from "../../../../utils/setUserVote";
+import { likeIcon } from "../../../../utils/variables";
 import { useEffect } from "react";
 
 import "./Candidate.css";
@@ -33,7 +33,7 @@ export const Candidate = ({
       }`}
     >
       <div className={`candidate-container item-${id}`}>
-        <img className="candidate-image" src={img} alt={fullName} />
+        <img className="candidate-image" src={img} alt={fullName || ""} />
         <span className={`count ${darkTheme ? "numberDark" : ""}`}>
           {totalVotes}
         </span>
@@ -45,7 +45,7 @@ export const Candidate = ({
             </div>
           </div>
           <div className="face front">
-            <h4 className="candidate-name">{fullName}</h4>
+            <h4 className="candidate-name">{fullName || ""}</h4>
           </div>
         </div>
       </div>

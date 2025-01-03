@@ -1,0 +1,12 @@
+.section {
+  background-color: var(--background-secondary);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}

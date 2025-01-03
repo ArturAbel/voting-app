@@ -1,6 +1,6 @@
-import { updateCandidatesVotes } from "../../utils/countVotes";
+import { updateCandidatesVotes } from "../../../utils/countVotes";
 import { Candidate } from "./Candidate/Candidate";
-import electionCandidates from "../../data/data";
+import electionCandidates from "../../../data/data";
 import { useState, useEffect } from "react";
 
 import "./VotePage.css";
