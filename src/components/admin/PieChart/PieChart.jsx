@@ -1,5 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
-import electionCandidates from "../../data/data";
+import electionCandidates from "../../../data/data";
 ChartJS.register(ArcElement, Tooltip);
 import { Pie } from "react-chartjs-2";
 
@@ -7,11 +7,11 @@ export const PieChart = () => {
   return (
     <Pie
       data={{
-        labels: electionCandidates.map((candidate) => candidate.fullName),
+        labels: electionCandidates.map((candidate) => candidate.fullName || ""),
         datasets: [
           {
             label: "Votes",
-            data: electionCandidates.map((candidate) => candidate.totalVotes),
+            data: electionCandidates.map((candidate) => candidate.totalVotes || 0),
             backgroundColor: [
               "rgb(255, 99, 132)",
               "rgb(54, 162, 235)",

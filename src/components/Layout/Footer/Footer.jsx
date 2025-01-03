@@ -1,14 +1,6 @@
-
-import {
-  facebookIcon,
-  linkedinIcon,
-  xIcon,
-  youtubeIcon,
-  sealIcon,
-} from "../../utils/variables";
+import { facebookIcon, linkedinIcon, xIcon, youtubeIcon, sealIcon } from "../../../utils/variables";
 
 import "./Footer.css";
-
 
 export const Footer = () => {
   return (
@@ -16,8 +8,8 @@ export const Footer = () => {
       <div className="footer-left-container">
         <h2 className="footer-get-in-touch">get in touch</h2>
         <div className="footer-slogan">
-          At Liberty Hill College, we empower every student to soar to new
-          heights. Join us and forge a future full of limitless possibilities.
+          At Liberty Hill College, we empower every student to soar to new heights. Join us and forge a future full of
+          limitless possibilities.
         </div>
         <div className="footer-social-icons">
           <a href="">
@@ -33,9 +25,7 @@ export const Footer = () => {
             <img className="social-icon" src={youtubeIcon} alt="youtube" />
           </a>
         </div>
-        <p className="footer-copyrights">
-          Copyright ©2024 Liberty Hill College
-        </p>
+        <p className="footer-copyrights">Copyright ©2024 Liberty Hill College</p>
       </div>
       <div className="footer-right-container">
         <ul className="footer-list">
@@ -65,10 +55,7 @@ export const Footer = () => {
           </li>
         </ul>
         <div className="footer-address">
-          <p>
-            Liberty Hill College 1234 Academic Drive Knowledge City, XY 56789
-            USA
-          </p>
+          <p>Liberty Hill College 1234 Academic Drive Knowledge City, XY 56789 USA</p>
           <p>Email: info@libertyhillcollege.edu</p>
           <p>Phone: (555) 123-4567</p>
           <img className="footer-seal" src={sealIcon} alt="seal" />

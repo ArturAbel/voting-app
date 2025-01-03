@@ -10,8 +10,8 @@ const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider
       value={{
-        toggleTheme,
         setDarkTheme,
+        toggleTheme,
         darkTheme,
       }}
     >

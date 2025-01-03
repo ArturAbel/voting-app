@@ -1,0 +1,16 @@
+.input {
+  padding-left: 0.2rem;
+    /* NOTE:Variable */
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.input::placeholder {
+  color: rgb(199, 199, 199);
+  letter-spacing: -0.5px;
+  /* NOTE:Variable */
+  font-size: 1.4rem;
+}

@@ -1,13 +1,10 @@
-import { VotePage } from "../../components/VotePage/VotePage";
+import { Footer } from "../../components/Layout/Footer/Footer";
 import { useThemeContext } from "../../context/ThemeContext";
-import { Footer } from "../../components/Footer/Footer";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { AdminPage } from "../AdminPage/AdminPage";
-import { Routes, Route } from "react-router-dom";
+import { Navbar } from "../../components/Layout/Navbar/Navbar";
 
 import "./UserPage.css";
 
-export const UserPage = ({ user, isAdmin, users }) => {
+export const UserPage = ({ user, isAdmin }) => {
   const { darkTheme } = useThemeContext();
 
   return (
@@ -15,10 +12,6 @@ export const UserPage = ({ user, isAdmin, users }) => {
       <div>
         <Navbar user={user} isAdmin={isAdmin} />
         <h3 className="vote-title">liberty hill college elections</h3>
-        <Routes>
-          <Route path="/" element={<VotePage users={users} user={user} />} />
-          <Route path="admin" element={<AdminPage users={users} />} />
-        </Routes>
       </div>
       <div>
         <Footer />

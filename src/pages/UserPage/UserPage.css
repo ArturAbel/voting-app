@@ -19,5 +19,5 @@
 
 .darkSection {
   background-color: var(--background-dark);
-  color: var(--font-light);
+  color: var(--fontColor-light);
 }

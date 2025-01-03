@@ -1,29 +1,29 @@
 :root {
   /* App background colors */
-  --background-dark: #2d2d2d;
-  --background-white: #ffffff;
-  --background-secondary: #f5f5f5;
-  --background-light: #eee;
-  --background-candidate-cards: #EF767A ;
   --background-error: rgb(250, 178, 178);
+  --background-candidate-cards: #ef767a;
+  --background-secondary: #f5f5f5;
+  --background-white: #ffffff;
+  --background-dark: #2d2d2d;
+  --background-light: #eee;
 
   /* Filter */
   --filter-like-icon: invert(58%) sepia(52%) saturate(2698%) hue-rotate(315deg) brightness(103%) contrast(87%);
 
   /* App font color */
-  --font-dark: #2d2d2d;
-  --font-light: #ffffff;
-  --font-green: #6b8b74;
+  --fontColor-light: #ffffff;
+  --fontColor-dark: #2d2d2d;
+  --fonColor-Main: #237df3;
 
   /* App font size */
-  --fontSize-admin-title: 2rem;
   --fontSize-registration-title: 2.5rem;
   --fontSize-registration-error: 1.3rem;
-  --fontSize-navbar-links: 1.5rem;
   --fontSize-candidate-card-name: 2rem;
-  --fontSize-admin-user-tab: 1.2rem;
-  --fontSize-footer-slogan: 1.3rem;
-  --fontSize-footer-listItem: 1.5rem;
   --fontSize-footer-copyrights: 1.3rem;
+  --fontSize-footer-listItem: 1.5rem;
+  --fontSize-admin-user-tab: 1.2rem;
   --fontSize-footer-address: 1.2rem;
+  --fontSize-footer-slogan: 1.3rem;
+  --fontSize-navbar-links: 1.5rem;
+  --fontSize-admin-title: 2rem;
 }
