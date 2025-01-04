@@ -1,16 +1,32 @@
+.inputContainer {
+  width: 100%;
+}
+
 .input {
-  padding-left: 0.2rem;
+  /* NOTE:Variable */
+  border: 1px solid rgb(175, 175, 175);
+  font-family: var(--font-main);
+
+  padding-bottom: 0.1rem;
+  border-radius: 0.8rem;
+  padding-left: 1rem;
   /* NOTE:Variable */
   font-size: 1.5rem;
-  outline: none;
-  border: none;
+  height: 3.5rem;
   width: 100%;
-  border-bottom: 1px solid black;
 }
 
 .input::placeholder {
-  color: rgb(199, 199, 199);
-  letter-spacing: -0.5px;
+  /* NOTE:Variable */
+  color: rgb(143, 143, 143);
+  letter-spacing: -0.3px;
   /* NOTE:Variable */
   font-size: 1.4rem;
+  font-family: var(--font-main);
+}
+
+.error {
+  font-size: var(--fontSize-error);
+  color: var(--background-error);
+  padding: 0.5rem;
 }
