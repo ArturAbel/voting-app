@@ -3,9 +3,10 @@ import { signIn } from "../../../utils/authentication/signIn";
 import { getAuth, validatePassword } from "firebase/auth";
 import { logoWithText } from "../../../utils/variables";
 import { useAuth } from "../../../context/AuthContext";
+import { getFeedbackMessage } from "./LoginForm.lib";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../UI/Input/Input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./LoginForm.module.css";
 
@@ -25,27 +26,8 @@ const LoginForm = () => {
         setContextUser(userResponse);
       } else {
         const status = await validatePassword(getAuth(), user.password);
-        // NOTE:Move to function
-
-
-
-        if (!status.isValid) {
-          const needsLowerCase = !status.containsLowercaseLetter;
-          const needsUpperCase = !status.containsUppercaseLetter;
-          const needsNumber = !status.containsNumericCharacter;
-          let feedbackMessage = "Password must include ";
-          if (needsLowerCase) feedbackMessage += " a lowercase letter";
-          if (needsUpperCase) feedbackMessage += " an uppercase letter";
-          if (needsNumber) feedbackMessage += " a number";
-          feedbackMessage = feedbackMessage.replace(/.*\b(a|an)\b(?!.*\b(a|an)\b)/, (match) =>
-            match.replace(/\b( a| an)\b/, " and")
-          ); //
-
-
-
-
-          setErrorMessage(feedbackMessage);
-        }
+        const feedbackMessage = getFeedbackMessage(status);
+        setErrorMessage(feedbackMessage);
         userResponse = await signUp(user.email, user.password);
         setContextUser(userResponse);
       }
@@ -76,39 +58,68 @@ const LoginForm = () => {
 
   const handleSetFormType = () => {
     setFormType((prevType) => (prevType === "Login" ? "Sign up" : "Login"));
+    setUser({ password: "", email: "" });
   };
+
+  useEffect(() => {
+    if (!errorMessage) return;
+    const showError = setTimeout(() => {
+      setErrorMessage("");
+    }, 3000);
+    return () => {
+      clearTimeout(showError);
+    };
+  }, [errorMessage]);
 
   return (
     <div className={styles.container}>
-      <img className={styles.logo} src={logoWithText} alt="logo" />
-      <h3 className={styles.title}>{formType}</h3>
-
       <form className={styles.form} type="submit">
-        <Input type={"email"} name={"email"} placeholder={"Email"} value={user.email} setValue={setUser} />
-        <div>
+        <div className={styles.header}>
+          <div className={styles.logoContainer}>
+            <div className={styles.logo}>
+              <div className={`${styles.logoBar} ${styles.left}`} />
+              <div className={`${styles.logoBar} ${styles.center}`} />
+              <div className={`${styles.logoBar} ${styles.right}`} />
+            </div>
+            <div className={styles.logoTextContainer}>
+              <p className={styles.logoText}>PollPal</p>
+            </div>
+          </div>
+        </div>
+
+        <p className={styles.title}>Create polls, cast your vote, and spark conversations that matter.</p>
+
+        <div className={styles.inputs}>
+          <Input type={"email"} name={"email"} placeholder={"Email"} value={user.email} setValue={setUser} />
           <Input
+            errorMessage={errorMessage}
             placeholder={"Password"}
             value={user.password}
             setValue={setUser}
             type={"password"}
             name={"password"}
           />
-          {/* NOTE:Lower it inside the input structure */}
-          {errorMessage && <p className={styles.error}>{errorMessage}</p>}
         </div>
+
         <div className={styles.buttons}>
-          <button onClick={handleWithEmailAndPassword} className={styles.button}>
+          <button onClick={handleWithEmailAndPassword} className={`${styles.button} ${styles.buttonLogin}`}>
             {formType}
           </button>
           {formType === "Login" && (
-            <button onClick={handleWithGoogle} className={styles.button}>
-              {formType} with Google
-            </button>
+            <>
+              <div className={styles.text}>
+                <p>or</p>
+              </div>
+              <button onClick={handleWithGoogle} className={styles.button}>
+                {formType} with Google
+              </button>
+            </>
           )}
         </div>
       </form>
+
       <div className={styles.signupContainer}>
-        <p>dont have an account?</p>
+        <p>{formType === "Login" ? "Don't have an account?" : "Already have an account?"}</p>
         <strong className={styles.signup} onClick={handleSetFormType}>
           {formType === "Login" ? "Sign up" : "Login"}
         </strong>
