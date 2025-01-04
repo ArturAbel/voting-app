@@ -59,6 +59,18 @@
 
 .error {
   font-size: var(--fontSize-error);
-  background-color: var(--background-error);
+  color: var(--background-error);
   padding: 0.5rem;
+}
+
+.signupContainer {
+  font-size: var(--fontSize-registration-signup);
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.signup {
+  color: var(--text-primary);
+  cursor: pointer;
 }

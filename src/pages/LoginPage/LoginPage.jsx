@@ -1,6 +1,6 @@
 import { LoginLoading } from "../../components/UI/LoginLoading/LoginLoading";
 import { LoginError } from "../../components/UI/LoginError/LoginError";
-import LoginForm from "../../components/Layout/LoginForm/LoginForm";
+import LoginForm from "../../components/layout/LoginForm/LoginForm";
 import styles from "./LoginPage.module.css";
 
 export const LoginPage = ({ loading, error }) => {

@@ -1,0 +1,9 @@
+.section {
+  background-color: var(--background-secondary);
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  width: 100dvw;
+  height: 100%;
+}

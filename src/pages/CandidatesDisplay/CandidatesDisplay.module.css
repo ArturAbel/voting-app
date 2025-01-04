@@ -1,0 +1,13 @@
+.section {
+  height: 100dvh;
+  width: 100%;
+}
+
+.title {
+  text-transform: capitalize;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  font-size: 3.5rem;
+  display: flex;
+}
