@@ -1,13 +1,17 @@
 import { useThemeContext } from "../../../context/ThemeContext.jsx";
+import { logOut } from "../../../utils/authentication/signOut.js";
 import { ThemeButton } from "./ThemeButton/ThemeButton.jsx";
 import { CustomLink } from "./CustomLink/CustomLink.jsx";
 import { logo } from "../../../utils/variables.js";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import "./Navbar.css";
 
-export const Navbar = ({ user, isAdmin }) => {
+export const Navbar = ({ user, isAdmin = true }) => {
   const [showLinks, setShowLinks] = useState(false);
+  const { darkTheme } = useThemeContext();
+  const navigate = useNavigate();
 
   const toggleLinks = () => {
     setShowLinks((prevShowLinks) => !prevShowLinks);
@@ -17,7 +21,14 @@ export const Navbar = ({ user, isAdmin }) => {
     setShowLinks(false);
   };
 
-  const { darkTheme } = useThemeContext();
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      navigate("/login");
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
 
   return (
     <nav>
@@ -33,17 +44,9 @@ export const Navbar = ({ user, isAdmin }) => {
       {showLinks && (
         <div className="links-container" onMouseLeave={hideLinks}>
           <ul className="navbar-links">
-            <li>
-              <CustomLink to="/user">vote</CustomLink>
-            </li>
-            {isAdmin && (
-              <li>
-                <CustomLink to="/admin">admin</CustomLink>
-              </li>
-            )}
-            <li>
-              <CustomLink to="/">logout</CustomLink>
-            </li>
+            <CustomLink to="/user">vote</CustomLink>
+            {isAdmin && <CustomLink to="/admin">admin</CustomLink>}
+            <CustomLink onClick={handleLogout}>logout</CustomLink>
           </ul>
         </div>
       )}

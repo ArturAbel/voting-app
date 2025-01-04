@@ -1,5 +1,4 @@
 import { getFunctions, httpsCallable } from "firebase/functions";
-import { getAuth } from "firebase/auth";
 
 export const makeAdmin = async (uid) => {
   const functions = getFunctions();
