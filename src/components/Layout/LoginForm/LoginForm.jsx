@@ -17,9 +17,8 @@ const LoginForm = () => {
   const { setUser: setContextUser } = useAuth();
   const navigate = useNavigate();
 
-  const handleClick = async (e) => {
+  const handleLogIn = async (e) => {
     e.preventDefault();
-
     try {
       let userResponse;
       if (formType === "Login") {
@@ -42,15 +41,15 @@ const LoginForm = () => {
       <img className={styles.logo} src={logoWithText} alt="logo" />
       <h3 className={styles.title}>{formType}</h3>
 
-      <form className={styles.form} action="" type="submit">
+      <form className={styles.form} type="submit">
         {userError && <p className={styles.error}>Email or Password are incorrect</p>}
         <Input type={"email"} name={"email"} placeholder={"Email"} value={user.email} setValue={setUser} />
         <Input type={"password"} name={"password"} placeholder={"Password"} value={user.password} setValue={setUser} />
         <div className={styles.buttons}>
-          <button onClick={handleClick} className={styles.button}>
+          <button onClick={handleLogIn} className={styles.button}>
             {formType}
           </button>
-          <button className={styles.button}>{formType}</button>
+          <button className={styles.button}>{formType} with Google</button>
         </div>
       </form>
 
