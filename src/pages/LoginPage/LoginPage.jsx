@@ -1,3 +1,4 @@
+import AnimationContainer from "../../components/layout/LoginForm/AnimationContainer/AnimationContainer";
 import { LoginLoading } from "../../components/UI/LoginLoading/LoginLoading";
 import { LoginError } from "../../components/UI/LoginError/LoginError";
 import LoginForm from "../../components/layout/LoginForm/LoginForm";
@@ -12,8 +13,7 @@ export const LoginPage = ({ loading, error }) => {
   return (
     <section className={styles.section}>
       <div className={styles.intro}>
-        <h1></h1>
-        <img src="" alt="" />
+        <AnimationContainer />
       </div>
       <LoginForm />
     </section>

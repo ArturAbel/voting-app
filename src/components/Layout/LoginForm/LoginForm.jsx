@@ -74,7 +74,11 @@ const LoginForm = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} type="submit">
+
+
         <div className={styles.header}>
+
+
           <div className={styles.logoContainer}>
             <div className={styles.logo}>
               <div className={`${styles.logoBar} ${styles.left}`} />
@@ -85,6 +89,8 @@ const LoginForm = () => {
               <p className={styles.logoText}>PollPal</p>
             </div>
           </div>
+
+
         </div>
 
         <p className={styles.title}>Create polls, cast your vote, and spark conversations that matter.</p>
@@ -116,6 +122,9 @@ const LoginForm = () => {
             </>
           )}
         </div>
+
+
+
       </form>
 
       <div className={styles.signupContainer}>
@@ -124,6 +133,9 @@ const LoginForm = () => {
           {formType === "Login" ? "Sign up" : "Login"}
         </strong>
       </div>
+
+
+      
     </div>
   );
 };
