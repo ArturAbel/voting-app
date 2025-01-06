@@ -1,4 +1,4 @@
-import { LOGIN_ANIMATION_WORDS } from "../../../../constants/login";
+import { LOGIN_ANIMATION_WORDS, RANDOM_COLORS } from "../../../../constants/login";
 import { useRef, useEffect } from "react";
 import Matter from "matter-js";
 import p5 from "p5";
@@ -22,20 +22,17 @@ function AnimationContainer() {
     let words = [];
 
     const createWord = (x, y, label) => {
-      const width = label.length * 20;
-      const height = 40;
+      const width = label.length * 10;
+      const height = 30;
 
       const body = Bodies.rectangle(x, y, width, height);
       World.add(world, body);
 
-      const rectWidth = label.length + 150;
-      const rectHeight = 50;
-      const textSize = 16;
+      const rectWidth = label.length + 200;
+      const rectHeight = 40;
+      const textSize = 12;
 
-
-      // TODO:MAKE selected colors function
-      const color = [p.random(255), p.random(255), p.random(255)];
-
+      const color = RANDOM_COLORS[Math.floor(p.random(RANDOM_COLORS.length) * 10)];
 
       const show = () => {
         const pos = body.position;
@@ -46,8 +43,8 @@ function AnimationContainer() {
         p.rectMode(p.CENTER);
         p.fill(color);
         p.stroke("#191919");
-        p.strokeWeight(2);
-        p.rect(0, 0, rectWidth, rectHeight, 20);
+        p.strokeWeight(1);
+        p.rect(0, 0, rectWidth, rectHeight, 15);
         p.noStroke();
         p.fill("#000000");
         p.textSize(textSize);
@@ -60,18 +57,18 @@ function AnimationContainer() {
     };
 
     p.setup = () => {
-      p.createCanvas(350, 550);
+      p.createCanvas(450, 550);
 
       engine = Engine.create();
       world = engine.world;
 
-      const ground = Bodies.rectangle(p.width / 2, p.height - 5, p.width, 10, {
+      const ground = Bodies.rectangle(p.width / 2, p.height - 5, p.width * 10 , 10, {
         isStatic: true,
       });
-      const wallLeft = Bodies.rectangle(10, p.height / 2, 10, p.height, {
+      const wallLeft = Bodies.rectangle(0, p.height / 2, 0, p.height, {
         isStatic: true,
       });
-      const wallRight = Bodies.rectangle(p.width - 10, p.height / 2, 10, p.height, {
+      const wallRight = Bodies.rectangle(350, p.height / 2, 0, p.height, {
         isStatic: true,
       });
 
@@ -79,7 +76,7 @@ function AnimationContainer() {
 
       for (let i = 0; i < LOGIN_ANIMATION_WORDS.length; i++) {
         const x = p.random(p.width);
-        const y = -200;
+        const y = -150;
         words.push(createWord(x, y, LOGIN_ANIMATION_WORDS[i]));
       }
     };
@@ -92,20 +89,20 @@ function AnimationContainer() {
       }
     };
 
-    const fx = p.random(-0.02, 0.02);
-    const fy = p.random(-0.02, 0.02);
+    const fx = p.random(-0.01, 0.01);
+    const fy = p.random(-0.01, 0.01);
 
     p.mouseMoved = () => {
       for (let w of words) {
         const pos = w.body.position;
-        if (p.dist(p.mouseX, p.mouseY, pos.x, pos.y) < 50) {
+        if (p.dist(p.mouseX, p.mouseY, pos.x, pos.y) < 30) {
           Body.applyForce(w.body, { x: pos.x, y: pos.y }, { x: fx, y: fy });
         }
       }
     };
   };
 
-      // TODO:Add a quote
+  // TODO:Add a quote
   return <div className={styles.container} ref={containerRef}></div>;
 }
 
