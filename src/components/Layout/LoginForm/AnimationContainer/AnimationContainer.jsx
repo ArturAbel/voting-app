@@ -1,41 +1,42 @@
-import { LOGIN_ANIMATION_WORDS } from "../../../../constants/login";
-import { useRef, useEffect } from "react";
+import { LOGIN_ANIMATION_WORDS, RANDOM_COLORS } from "../../../../constants/login";
+import { useRef, useEffect, useState } from "react";
 import Matter from "matter-js";
 import p5 from "p5";
 
 import styles from "./AnimationContainer.module.css";
 
 function AnimationContainer() {
+  const [colors, setColors] = useState([...RANDOM_COLORS]);
   const containerRef = useRef(null);
 
   useEffect(() => {
     const myP5 = new p5(Sketch, containerRef.current);
+    setColors(RANDOM_COLORS);
     return () => {
       myP5.remove();
     };
   }, []);
 
   const Sketch = (p) => {
-    const { Engine, World, Bodies, Body } = Matter;
+    const { Engine, World, Bodies } = Matter;
 
     let engine, world;
     let words = [];
+    let wordIndex = 0;
+    const spawnInterval = 20;
+    let currentColors = colors;
 
     const createWord = (x, y, label) => {
-      const width = label.length * 20;
-      const height = 40;
+      const rectWidth = label.length + 115;
+      const rectHeight = 40;
+      const textSize = 11;
+      const body = Bodies.rectangle(x, y, rectWidth, rectHeight);
 
-      const body = Bodies.rectangle(x, y, width, height);
+      const randomIndex = p.floor(p.random(currentColors.length));
+      let pickedColor = currentColors[randomIndex];
+      currentColors.splice(randomIndex, 1);
+
       World.add(world, body);
-
-      const rectWidth = label.length + 150;
-      const rectHeight = 50;
-      const textSize = 16;
-
-
-      // TODO:MAKE selected colors function
-      const color = [p.random(255), p.random(255), p.random(255)];
-
 
       const show = () => {
         const pos = body.position;
@@ -44,10 +45,10 @@ function AnimationContainer() {
         p.translate(pos.x, pos.y);
         p.rotate(angle);
         p.rectMode(p.CENTER);
-        p.fill(color);
+        p.fill(pickedColor);
         p.stroke("#191919");
-        p.strokeWeight(2);
-        p.rect(0, 0, rectWidth, rectHeight, 20);
+        p.strokeWeight(1);
+        p.rect(0, 0, rectWidth + 10, rectHeight, 15);
         p.noStroke();
         p.fill("#000000");
         p.textSize(textSize);
@@ -56,57 +57,45 @@ function AnimationContainer() {
         p.pop();
       };
 
-      return { body, label, show };
+      return { body, show };
     };
 
     p.setup = () => {
-      p.createCanvas(350, 550);
-
+      p.createCanvas(350, 410);
       engine = Engine.create();
       world = engine.world;
 
-      const ground = Bodies.rectangle(p.width / 2, p.height - 5, p.width, 10, {
-        isStatic: true,
-      });
-      const wallLeft = Bodies.rectangle(10, p.height / 2, 10, p.height, {
-        isStatic: true,
-      });
-      const wallRight = Bodies.rectangle(p.width - 10, p.height / 2, 10, p.height, {
-        isStatic: true,
-      });
+      const ground = Bodies.rectangle(p.width / 2, p.height, p.width, 10, { isStatic: true });
+      const wallLeft = Bodies.rectangle(0, p.height / 2, 10, p.height, { isStatic: true });
+      const wallRight = Bodies.rectangle(p.width - 50, p.height / 2, 10, p.height, { isStatic: true });
 
       World.add(world, [ground, wallLeft, wallRight]);
-
-      for (let i = 0; i < LOGIN_ANIMATION_WORDS.length; i++) {
-        const x = p.random(p.width);
-        const y = -200;
-        words.push(createWord(x, y, LOGIN_ANIMATION_WORDS[i]));
-      }
     };
 
     p.draw = () => {
-      p.background("#eee");
+      p.background("#D7D5D7");
       Engine.update(engine);
+
+      if (p.frameCount % spawnInterval === 0 && wordIndex < LOGIN_ANIMATION_WORDS.length) {
+        const x = p.random(p.width - 50);
+        const y = -50;
+
+        const newWord = createWord(x, y, LOGIN_ANIMATION_WORDS[wordIndex]);
+        words.push(newWord);
+
+        wordIndex++;
+      }
       for (let w of words) {
         w.show();
       }
     };
-
-    const fx = p.random(-0.02, 0.02);
-    const fy = p.random(-0.02, 0.02);
-
-    p.mouseMoved = () => {
-      for (let w of words) {
-        const pos = w.body.position;
-        if (p.dist(p.mouseX, p.mouseY, pos.x, pos.y) < 50) {
-          Body.applyForce(w.body, { x: pos.x, y: pos.y }, { x: fx, y: fy });
-        }
-      }
-    };
   };
 
-      // TODO:Add a quote
-  return <div className={styles.container} ref={containerRef}></div>;
+  return (
+    <div className={styles.outer}>
+      <div className={styles.inner} ref={containerRef}></div>
+    </div>
+  );
 }
 
 export default AnimationContainer;
