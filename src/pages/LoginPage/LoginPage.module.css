@@ -2,15 +2,31 @@
   background-color: var(--background-dark);
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 100dvh;
   display: flex;
   width: 100%;
   gap: 2rem;
 }
 
-.intro {
+.container {
   height: var(--height-login-form);
-  overflow: hidden;
+  flex-direction: column;
   border-radius: 10px;
+  align-items: end;
+  overflow: hidden;
+  display: flex;
   width: 35rem;
+}
+
+.quote {
+  color: var(--background-light);
+  justify-content: start;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+  height: 20rem;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
 }

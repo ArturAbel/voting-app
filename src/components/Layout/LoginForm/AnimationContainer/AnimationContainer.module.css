@@ -1,4 +1,13 @@
-.container {
+.outer {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  align-self: flex-end;
+  display: flex;
   height: 100%;
   width: 100%;
 }

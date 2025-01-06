@@ -1,7 +1,6 @@
 import { signUp, signUpWithGoogle } from "../../../utils/authentication/signUp";
 import { signIn } from "../../../utils/authentication/signIn";
 import { getAuth, validatePassword } from "firebase/auth";
-import { logoWithText } from "../../../utils/variables";
 import { useAuth } from "../../../context/AuthContext";
 import { getFeedbackMessage } from "./LoginForm.lib";
 import { useNavigate } from "react-router-dom";
