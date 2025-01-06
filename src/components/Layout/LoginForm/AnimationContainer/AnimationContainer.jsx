@@ -73,7 +73,7 @@ function AnimationContainer() {
     };
 
     p.draw = () => {
-      p.background("#D7D5D7");
+      p.background("#E0E1E9");
       Engine.update(engine);
 
       if (p.frameCount % spawnInterval === 0 && wordIndex < LOGIN_ANIMATION_WORDS.length) {

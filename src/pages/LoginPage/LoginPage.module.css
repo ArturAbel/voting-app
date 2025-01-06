@@ -20,7 +20,7 @@
 }
 
 .quote {
-  color: var(--background-light);
+  color: var(--background-secondary);
   justify-content: start;
   flex-direction: column;
   padding: 2rem 1rem;
