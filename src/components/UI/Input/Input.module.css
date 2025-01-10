@@ -6,7 +6,6 @@
   /* NOTE:Variable */
   border: 1px solid rgb(175, 175, 175);
   font-family: var(--font-main);
-
   padding-bottom: 0.1rem;
   border-radius: 0.8rem;
   padding-left: 1rem;
@@ -23,6 +22,25 @@
   /* NOTE:Variable */
   font-size: 1.4rem;
   font-family: var(--font-main);
+}
+
+.input[type="file"] {
+  font-family: var(--font-main);
+  color: rgb(143, 143, 143);
+  vertical-align: middle;
+  letter-spacing: -0.3px;
+  font-size: 1.4rem;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--background-white);
+  border: 1px solid rgb(143, 143, 143);
+  font-family: var(--font-main);
+  letter-spacing: -0.3px;
+  margin-top: 0.7rem;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .error {

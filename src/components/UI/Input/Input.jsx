@@ -15,7 +15,6 @@ export const Input = ({ type, name, placeholder, value, setValue, errorMessage }
         value={value}
         type={type}
         name={name}
-        required
       />
       {errorMessage && <p className={styles.error}>{errorMessage}</p>}
     </div>
