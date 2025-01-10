@@ -1,0 +1,16 @@
+.button {
+  background-color: var(--fonColor-Main);
+  border: 1px solid var(--fonColor-Main);
+  font-family: var(--font-main);
+  color: var(--fontColor-light);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 3.5rem;
+  width: 100%;
+  align-self: flex-end;
+}
+
+.button:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,27 @@
+.button {
+  background-color: var(--background-dark);
+  border: 1px solid var(--background-dark);
+  font-family: var(--font-main);
+  color: var(--fontColor-light);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 3.5rem;
+  width: 100%;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.buttonLogin {
+  background-color: var(--fonColor-Main);
+  border: 1px solid var(--fonColor-Main);
+}
+
+.text {
+  font-size: var(--fontSize-login-text);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

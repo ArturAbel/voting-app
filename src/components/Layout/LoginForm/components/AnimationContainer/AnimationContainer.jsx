@@ -1,4 +1,4 @@
-import { LOGIN_ANIMATION_WORDS, RANDOM_COLORS } from "../../../../constants/login";
+import { LOGIN_ANIMATION_WORDS, RANDOM_COLORS } from "../../../../../constants/login";
 import { useRef, useEffect, useState } from "react";
 import Matter from "matter-js";
 import p5 from "p5";
@@ -73,7 +73,7 @@ function AnimationContainer() {
     };
 
     p.draw = () => {
-      p.background("#E0E1E9");
+      p.background("#ffff");
       Engine.update(engine);
 
       if (p.frameCount % spawnInterval === 0 && wordIndex < LOGIN_ANIMATION_WORDS.length) {

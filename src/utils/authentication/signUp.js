@@ -9,5 +9,5 @@ export const signUp = async (email, password) => {
 export const signUpWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   const userCredential = await signInWithPopup(auth, provider);
-  return userCredential.user;
+  return userCredential;
 };
