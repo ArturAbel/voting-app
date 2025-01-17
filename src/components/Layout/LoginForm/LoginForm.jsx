@@ -43,7 +43,7 @@ const LoginForm = () => {
         try {
           userResponse = await signIn(user.email, user.password);
           setContextUser(userResponse);
-          navigate(LINK.HOME);
+          navigate(`/${LINK.POLL_BOARD}`);
         } catch (error) {
           console.error("Failed to log in: ", error);
         }
@@ -88,7 +88,7 @@ const LoginForm = () => {
           }));
           setStep(2);
         } else {
-          navigate(LINK.HOME);
+          navigate(`/${LINK.POLL_BOARD}`);
         }
       }
     } catch (error) {
@@ -110,7 +110,7 @@ const LoginForm = () => {
         ...(profileImage && { profileImage: `profileImages/${userData.uid}` }),
       };
       await createUserInDB(userData.uid, userDetailsToDB);
-      navigate(LINK.HOME);
+      navigate(`/${LINK.POLL_BOARD}`);
     } catch (error) {
       // NOTE:Set error indication
       console.error("Error creating account: ", error);

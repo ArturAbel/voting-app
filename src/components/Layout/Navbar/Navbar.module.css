@@ -1,12 +1,9 @@
 .navbar {
   justify-content: space-between;
-  padding: 1rem 0;
+  height: var(--height-navbar);
   display: flex;
+  padding: 2rem;
   width: 100%;
-  /* NOTE:Add to variables */
-  height: 6rem;
-
-  background-color: darkkhaki;
 }
 
 .logoContainer {
@@ -17,6 +14,10 @@
 }
 
 .links {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
 }
 
 .icons {
@@ -24,34 +25,31 @@
   align-items: center;
   display: flex;
   height: 100%;
+  gap: 1rem;
 }
 
 .avatar {
   border-radius: 50%;
-  overflow: hidden;
+  position: relative;
   cursor: pointer;
   height: 2.5rem;
   width: 2.5rem;
+
   /* NOTE:Change later */
   background-color: rgb(8, 81, 56);
 }
 
-.settingContainer {
-  position: absolute;
-  padding: 1rem 0;
-  width: 13rem;
-  height: 13rem;
-  z-index: 10;
-  right: 1.5vw;
-  top: 6vh;
-}
-
 .settings {
-  font-size: var(--fontSize-navbar-links);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background: var(--background-white);
   text-transform: capitalize;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
+  border-radius: 8px;
+  position: absolute;
+  padding: 1rem;
   display: flex;
-  gap: 1rem;
+  width: 12rem;
+  z-index: 1;
+  top: 120%;
+  right: 0;
 }

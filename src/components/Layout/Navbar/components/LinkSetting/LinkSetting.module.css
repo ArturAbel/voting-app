@@ -1,0 +1,18 @@
+.link {
+  font-size: var(--fontSize-navbar-links);
+  font-family: var(--font-main);
+  color: var(--font-main);
+  padding: 0.2rem 1rem;
+  font-weight: 400;
+}
+
+.active {
+  opacity: 0.5;
+}
+
+.hover {
+  background-color: var(--background-dark);
+  color: var(--background-white);
+  border-radius: 4px;
+  transition: 0.2s;
+}

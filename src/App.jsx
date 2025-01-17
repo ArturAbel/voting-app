@@ -1,4 +1,3 @@
-import CandidatesDisplay from "./pages/CandidatesDisplay/CandidatesDisplay";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
@@ -6,7 +5,9 @@ import { AdminPage } from "./pages/AdminPage/AdminPage";
 import { ThemeProvider } from "./context/ThemeContext";
 import Layout from "./components/layout/Layout/Layout";
 import { AuthProvider } from "./context/AuthContext";
+import PollBoard from "./pages/PollBoard/PollBoard";
 import { LINK } from "./constants/navigation";
+import MyPolls from "./pages/MyPolls/MyPolls";
 
 function App() {
   const routes = [
@@ -15,13 +16,16 @@ function App() {
       element: <LoginPage />,
     },
     {
-      path: `/${LINK.HOME}`,
+      path: `/${LINK.POLL_BOARD}`,
       element: (
         <ProtectedRoute>
           <Layout />
         </ProtectedRoute>
       ),
-      children: [{ path: `/${LINK.HOME}`, element: <CandidatesDisplay /> }],
+      children: [
+        { path: `/${LINK.POLL_BOARD}`, element: <PollBoard /> },
+        { path: `/${LINK.MY_POLLS}`, element: <MyPolls /> },
+      ],
     },
     {
       path: "/admin",
