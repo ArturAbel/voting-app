@@ -1,7 +1,9 @@
 import AnimationContainer from "../../components/layout/LoginForm/components/AnimationContainer/AnimationContainer";
 import { LoginLoading } from "../../components/UI/LoginLoading/LoginLoading";
+import Quote from "../../components/layout/LoginForm/components/Quote/Quote";
 import { LoginError } from "../../components/UI/LoginError/LoginError";
 import LoginForm from "../../components/layout/LoginForm/LoginForm";
+import { QUOTE } from "./data/LoginPage.data";
 
 import styles from "./LoginPage.module.css";
 
@@ -10,16 +12,10 @@ export const LoginPage = ({ loading, error }) => {
   if (loading) return <LoginLoading />;
   if (error) return <LoginError errorMessage={error} />;
 
-  // NOTE:Move to text file
-  const QUOTE = '" If you can’t explain your opinion simply, just drop it in the poll anyway. "';
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.quoteContainer}>
-          <p className={styles.quote}>{QUOTE}</p>
-          <span> — Some Really Smart Person</span>
-        </div>
+        <Quote quote={QUOTE} />
         <AnimationContainer />
       </div>
       <LoginForm />

@@ -3,11 +3,15 @@
   border: 1px solid var(--background-dark);
   font-family: var(--font-main);
   color: var(--fontColor-light);
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
   height: 3.5rem;
+  display: flex;
   width: 100%;
+  gap: 1rem;
 }
 
 .button:hover {

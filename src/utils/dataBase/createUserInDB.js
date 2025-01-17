@@ -1,8 +1,10 @@
-import { db, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 
-async function createUserInDB(userId, userData) {
+export async function createUserInDB(userId, userData) {
   try {
-    await setDoc(db, "users", userId, {
+    const docRef = doc(db, "users", userId);
+    await setDoc(docRef, {
       ...userData,
       createdAt: new Date(),
     });

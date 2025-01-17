@@ -1,9 +1,10 @@
 import styles from "./ButtonCreate.module.css";
 
-const ButtonCreate = ({ handleCreateAccount }) => {
+const ButtonCreate = ({ handleCreateAccount,isLoading }) => {
   return (
     <button type="button" className={styles.button} onClick={handleCreateAccount}>
-      Create Account
+      {/* NOTE:Add spinner instead of text */}
+      {isLoading ? "Loading..." : "Create Account"}
     </button>
   );
 };

@@ -14,9 +14,4 @@ export const LOGIN_INPUT_CONFIG = [
     name: "displayName",
     type: "name",
   },
-  {
-    placeHolder: "Profile image",
-    name: "profileImage",
-    type: "file",
-  },
 ];
