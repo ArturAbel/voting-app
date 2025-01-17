@@ -18,20 +18,3 @@
   display: flex;
   width: 35rem;
 }
-
-.quoteContainer {
-  color: var(--background-white);
-  justify-content: start;
-  flex-direction: column;
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  height: 30rem;
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-}
-
-.quote {
-  text-wrap: balance;
-  font-size: 2.5rem;
-}

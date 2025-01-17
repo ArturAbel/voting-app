@@ -4,12 +4,15 @@ import ButtonsContainer from "./components/ButtonsContainer/ButtonsContainer";
 import { createUserInDB } from "../../../utils/dataBase/createUserInDB";
 import ButtonsLogin from "./components/ButtonsLogin/ButtonsLogin";
 import ButtonCreate from "./components/ButtonCreate/ButtonCreate";
+import { uniqueNamesGenerator } from "unique-names-generator";
 import { signIn } from "../../../utils/authentication/signIn";
+import { defaultProfileImage } from "../../../constants/data";
+import { randomNameConfig } from "./config/randomNameConfig";
 import LinkSignUp from "./components/LinkSignUp/LinkSignUp";
+import { LOGIN_INPUT_CONFIG } from "./data/LoginForm.data";
 import { getAuth, validatePassword } from "firebase/auth";
+import { getFeedbackMessage } from "./lib/LoginForm.lib";
 import { useAuth } from "../../../context/AuthContext";
-import { LOGIN_INPUT_CONFIG } from "./LoginForm.data";
-import { getFeedbackMessage } from "./LoginForm.lib";
 import { LINK } from "../../../constants/navigation";
 import InputFile from "../../UI/InputFile/InputFile";
 import { doc, getDoc } from "firebase/firestore";
@@ -32,36 +35,40 @@ const LoginForm = () => {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
 
-  // Handle sign in with email and password and sign up
   const handleWithEmailAndPassword = async (e) => {
-    // Login with email and password
     e.preventDefault();
     try {
       let userResponse;
       if (formType === "Login") {
-        userResponse = await signIn(user.email, user.password);
-        setContextUser(userResponse);
+        try {
+          userResponse = await signIn(user.email, user.password);
+          setContextUser(userResponse);
+          navigate(LINK.HOME);
+        } catch (error) {
+          console.error("Failed to log in: ", error);
+        }
       } else {
-        // Sign up with email and password
-        // Check password
         const status = await validatePassword(getAuth(), user.password);
         const feedbackMessage = getFeedbackMessage(status);
         setErrorMessage(feedbackMessage);
         userResponse = await signUp(user.email, user.password);
+        setUserData((prev) => ({
+          ...prev,
+          displayName: uniqueNamesGenerator(randomNameConfig),
+          profileImage: defaultProfileImage,
+          uid: userResponse.uid,
+          email: user.email,
+        }));
         // Set auth context
         setContextUser(userResponse);
         setStep(2);
       }
-      // if (userResponse) {
-      //   navigate("/");
-      // }
     } catch (error) {
       const errorMessage = error.message;
       console.error(errorMessage);
     }
   };
 
-  // Handle google in log in, which also does sign in
   const handleWithGoogle = async (e) => {
     e.preventDefault();
     let userResponse;

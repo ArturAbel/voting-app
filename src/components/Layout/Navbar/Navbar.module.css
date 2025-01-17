@@ -1,0 +1,57 @@
+.navbar {
+  justify-content: space-between;
+  padding: 1rem 0;
+  display: flex;
+  width: 100%;
+  /* NOTE:Add to variables */
+  height: 6rem;
+
+  background-color: darkkhaki;
+}
+
+.logoContainer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.links {
+}
+
+.icons {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  /* NOTE:Change later */
+  background-color: rgb(8, 81, 56);
+}
+
+.settingContainer {
+  position: absolute;
+  padding: 1rem 0;
+  width: 13rem;
+  height: 13rem;
+  z-index: 10;
+  right: 1.5vw;
+  top: 6vh;
+}
+
+.settings {
+  font-size: var(--fontSize-navbar-links);
+  text-transform: capitalize;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}

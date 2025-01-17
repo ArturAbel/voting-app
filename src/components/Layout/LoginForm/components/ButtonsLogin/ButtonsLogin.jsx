@@ -1,3 +1,5 @@
+import { FaGoogle } from "react-icons/fa";
+
 import styles from "./ButtonsLogin.module.css";
 
 const ButtonsLogin = ({ handleWithEmailAndPassword, formType, handleWithGoogle }) => {
@@ -12,6 +14,7 @@ const ButtonsLogin = ({ handleWithEmailAndPassword, formType, handleWithGoogle }
             <p>or</p>
           </div>
           <button onClick={handleWithGoogle} className={styles.button}>
+            <FaGoogle />
             {formType} with Google
           </button>
         </>

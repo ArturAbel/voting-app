@@ -1,19 +1,20 @@
 import { useThemeContext } from "../../../context/ThemeContext.jsx";
+import { CustomLink } from "./components/CustomLink/CustomLink.jsx";
 import { logOut } from "../../../utils/authentication/signOut.js";
 import { ThemeButton } from "./ThemeButton/ThemeButton.jsx";
-import { CustomLink } from "./CustomLink/CustomLink.jsx";
-import { logo } from "../../../utils/variables.js";
+import { LINK } from "../../../constants/navigation.js";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../UI/Logo/Logo.jsx";
 import { useState } from "react";
 
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
 
-export const Navbar = ({ user, isAdmin = true }) => {
+export const Navbar = ({ isAdmin = true }) => {
   const [showLinks, setShowLinks] = useState(false);
   const { darkTheme } = useThemeContext();
   const navigate = useNavigate();
 
-  const toggleLinks = () => {
+  const handleAvatarClick = () => {
     setShowLinks((prevShowLinks) => !prevShowLinks);
   };
 
@@ -24,26 +25,28 @@ export const Navbar = ({ user, isAdmin = true }) => {
   const handleLogout = async () => {
     try {
       await logOut();
-      navigate("/login");
+      navigate(`/${LINK.LOGIN}`);
     } catch (error) {
       console.error("Error signing out:", error);
     }
   };
 
   return (
-    <nav>
-      <div className="navbar-logo-container">
-        <img className={`navbar-logo ${darkTheme ? "logoDark" : ""}`} src={logo} alt="logo" />
+    <nav className={styles.navbar}>
+      <div className={styles.logoContainer}>
+        <Logo />
       </div>
-      <p className="navbar-user-name">{""}</p>
-      <div className="navbar-icons-container">
+      <div className={styles.links}></div>
+      <div className={styles.icons}>
         <ThemeButton />
-        <img className="user-image" alt={""}></img>
-        <button className="navbar-links-toggle" onMouseOver={toggleLinks}></button>
+        <div onClick={handleAvatarClick} className={styles.avatar}>
+          <img alt={""}></img>
+        </div>
       </div>
+
       {showLinks && (
-        <div className="links-container" onMouseLeave={hideLinks}>
-          <ul className="navbar-links">
+        <div className={styles.settingContainer} onMouseLeave={hideLinks}>
+          <ul className={styles.settings}>
             <CustomLink to="/user">vote</CustomLink>
             {isAdmin && <CustomLink to="/admin">admin</CustomLink>}
             <CustomLink onClick={handleLogout}>logout</CustomLink>

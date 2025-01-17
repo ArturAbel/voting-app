@@ -6,21 +6,22 @@ import { AdminPage } from "./pages/AdminPage/AdminPage";
 import { ThemeProvider } from "./context/ThemeContext";
 import Layout from "./components/layout/Layout/Layout";
 import { AuthProvider } from "./context/AuthContext";
+import { LINK } from "./constants/navigation";
 
 function App() {
   const routes = [
     {
-      path: "/login",
+      path: `/${LINK.LOGIN}`,
       element: <LoginPage />,
     },
     {
-      path: "/",
+      path: `/${LINK.HOME}`,
       element: (
         <ProtectedRoute>
           <Layout />
         </ProtectedRoute>
       ),
-      children: [{ path: "/", element: <CandidatesDisplay /> }],
+      children: [{ path: `/${LINK.HOME}`, element: <CandidatesDisplay /> }],
     },
     {
       path: "/admin",
