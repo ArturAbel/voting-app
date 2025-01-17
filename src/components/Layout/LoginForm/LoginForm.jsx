@@ -1,5 +1,7 @@
 import { signUp, signUpWithGoogle } from "../../../utils/authentication/signUp";
+import { uploadProfileImage } from "../../../utils/dataBase/uploadProfileImage";
 import ButtonsContainer from "./components/ButtonsContainer/ButtonsContainer";
+import { createUserInDB } from "../../../utils/dataBase/createUserInDB";
 import ButtonsLogin from "./components/ButtonsLogin/ButtonsLogin";
 import ButtonCreate from "./components/ButtonCreate/ButtonCreate";
 import { signIn } from "../../../utils/authentication/signIn";
@@ -9,7 +11,10 @@ import { useAuth } from "../../../context/AuthContext";
 import { LOGIN_INPUT_CONFIG } from "./LoginForm.data";
 import { getFeedbackMessage } from "./LoginForm.lib";
 import { LINK } from "../../../constants/navigation";
+import InputFile from "../../UI/InputFile/InputFile";
+import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../../config/firebase";
 import { Input } from "../../UI/Input/Input";
 import { useEffect, useState } from "react";
 import Logo from "../../UI/Logo/Logo";
@@ -19,8 +24,10 @@ import styles from "./LoginForm.module.css";
 const LoginForm = () => {
   const [userData, setUserData] = useState({ email: "", displayName: "", profileImage: "", uid: "" });
   const [user, setUser] = useState({ password: "", email: "", displayName: "", profileImage: "" });
+  const [profileImage, setProfileImage] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [formType, setFormType] = useState("Login");
+  const [isLoading, setIsLoading] = useState(false);
   const { setUser: setContextUser } = useAuth();
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
@@ -36,7 +43,6 @@ const LoginForm = () => {
         setContextUser(userResponse);
       } else {
         // Sign up with email and password
-
         // Check password
         const status = await validatePassword(getAuth(), user.password);
         const feedbackMessage = getFeedbackMessage(status);
@@ -62,12 +68,10 @@ const LoginForm = () => {
     try {
       if (formType === "Login") {
         userResponse = await signUpWithGoogle();
-        console.log(`userResponse: `, userResponse);
-
+        // Set User Auth
         setContextUser(userResponse.user);
-        const { creationTime, lastSignInTime } = userResponse.user.metadata;
-        const isNewUser = userResponse.user?._tokenResponse?.isNewUser || creationTime === lastSignInTime;
-        if (isNewUser) {
+        const userDoc = await getDoc(doc(db, "users", userResponse.user.uid));
+        if (!userDoc.exists()) {
           setUserData((prev) => ({
             ...prev,
             displayName: userResponse.user.displayName,
@@ -85,11 +89,27 @@ const LoginForm = () => {
     }
   };
 
-  const handleCreateAccount = (e) => {
+  // Create a new account
+  const handleCreateAccount = async (e) => {
     e.preventDefault();
-    // Add a check if display name and if profileImage are not empty, then replace
-    console.log(`user: `, user);
-    console.log(`userData: `, userData);
+    setIsLoading(true);
+    try {
+      if (profileImage) {
+        await uploadProfileImage(profileImage, `profileImages/${userData.uid}`);
+      }
+      let userDetailsToDB = {
+        ...userData,
+        ...(user.displayName && { displayName: user.displayName }),
+        ...(profileImage && { profileImage: `profileImages/${userData.uid}` }),
+      };
+      await createUserInDB(userData.uid, userDetailsToDB);
+      navigate(LINK.HOME);
+    } catch (error) {
+      // NOTE:Set error indication
+      console.error("Error creating account: ", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Handle set form data
@@ -98,7 +118,6 @@ const LoginForm = () => {
     setUser({ password: "", email: "" });
   };
 
-  // Error message
   useEffect(() => {
     if (!errorMessage) return;
     const showError = setTimeout(() => {
@@ -109,7 +128,6 @@ const LoginForm = () => {
     };
   }, [errorMessage]);
 
-  // Add verification for user name and for image
   const renderInput = ({ placeHolder, type, name }) => {
     return (
       <Input
@@ -133,7 +151,12 @@ const LoginForm = () => {
         <p className={styles.title}>Create polls, cast your vote, and spark conversations that matter.</p>
         <div className={styles.inputs}>
           {step === 1 && LOGIN_INPUT_CONFIG.slice(0, 2).map((inputConfig) => renderInput(inputConfig))}
-          {step === 2 && LOGIN_INPUT_CONFIG.slice(2, 4).map((inputConfig) => renderInput(inputConfig))}
+          {step === 2 && (
+            <>
+              {LOGIN_INPUT_CONFIG.slice(2, 3).map((inputConfig) => renderInput(inputConfig))}
+              <InputFile setProfileImage={setProfileImage} />
+            </>
+          )}
         </div>
         <ButtonsContainer>
           {step === 1 && (
@@ -143,10 +166,10 @@ const LoginForm = () => {
               formType={formType}
             />
           )}
-          {step === 2 && <ButtonCreate handleCreateAccount={handleCreateAccount} />}
+          {step === 2 && <ButtonCreate handleCreateAccount={handleCreateAccount} isLoading={isLoading} />}
         </ButtonsContainer>
       </form>
-      <LinkSignUp formType={formType} handleSetFormType={handleSetFormType} />
+      {step === 1 && <LinkSignUp formType={formType} handleSetFormType={handleSetFormType} />}
     </div>
   );
 };

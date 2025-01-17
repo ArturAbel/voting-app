@@ -1,6 +1,7 @@
 .container {
   font-size: var(--fontSize-login-text);
   color: var(--text-secondary);
+  min-height: 22.5px;
   display: flex;
   gap: 0.7rem;
 }

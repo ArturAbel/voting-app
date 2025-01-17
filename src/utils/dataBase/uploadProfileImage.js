@@ -1,10 +1,13 @@
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../../config/firebase";
 
-const storage = getStorage();
-
-export async function uploadProfileImage(file, uid) {
-  const storageRef = ref(storage, `profileImages/${uid}`);
-  await uploadBytes(storageRef, file);
-  const downloadURL = await getDownloadURL(storageRef);
-  return downloadURL;
+export async function uploadProfileImage(file, location) {
+  try {
+    const storageRef = ref(storage, location);
+    await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(storageRef);
+    return downloadURL;
+  } catch (error) {
+    console.error("Failed to upload profile image: ", error);
+  }
 }
