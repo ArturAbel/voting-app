@@ -2,17 +2,17 @@ import { createContext, useState, useContext } from "react";
 
 const ThemeContext = createContext();
 
-const ThemeProvider = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(false);
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
 
-  const toggleTheme = () => setDarkTheme((prevTheme) => !prevTheme);
+  const toggleTheme = () => setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 
   return (
     <ThemeContext.Provider
       value={{
-        setDarkTheme,
         toggleTheme,
-        darkTheme,
+        setTheme,
+        theme,
       }}
     >
       {children}
@@ -20,8 +20,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-const useThemeContext = () => {
-  return useContext(ThemeContext);
-};
-
-export { ThemeContext, ThemeProvider, useThemeContext };
+export const useTheme = () => useContext(ThemeContext);

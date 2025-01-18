@@ -1,7 +1,7 @@
 .link {
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: var(--background-white);
+  background-color: var(--background-light);
   border: 1.5px solid var(--fontColor-dark);
+  box-shadow: var(--shadowbox-dimensional);
   color: var(--fontColor-dark);
   padding: 0.2rem 1.5rem;
   letter-spacing: -0.5px;
@@ -13,15 +13,17 @@
 }
 
 .link:hover {
-  background-color: var(--background-dark);
+  box-shadow: var(--shadowbox-dimensional-clicked);
   animation: shake 0.2s 0.2s infinite linear;
-  color: var(--background-white);
+  background-color: var(--background-dark);
+  color: var(--background-light);
   transition: 0.3s;
 }
 
 .active {
+  box-shadow: var(--shadowbox-dimensional-clicked);
   background-color: var(--background-dark);
-  color: var(--background-white);
+  color: var(--background-light);
 }
 
 @keyframes shake {

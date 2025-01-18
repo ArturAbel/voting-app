@@ -12,7 +12,7 @@
 
 .hover {
   background-color: var(--background-dark);
-  color: var(--background-white);
+  color: var(--background-light);
   border-radius: 4px;
   transition: 0.2s;
 }

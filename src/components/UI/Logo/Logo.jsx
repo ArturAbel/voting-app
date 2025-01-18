@@ -1,6 +1,10 @@
-import styles from "./Logo.module.css";
+import { useThemeStyles } from "../../../hooks/useThemeStyles";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
 const Logo = () => {
+  const styles = useThemeStyles(lightStyles, darkStyles);
+
   return (
     <div className={styles.logoContainer}>
       <div className={styles.logo}>

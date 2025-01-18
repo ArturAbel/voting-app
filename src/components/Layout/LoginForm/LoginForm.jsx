@@ -74,7 +74,6 @@ const LoginForm = () => {
     try {
       if (formType === "Login") {
         userResponse = await signUpWithGoogle();
-        // Set User Auth
         setUserAuth(userResponse);
         const userDoc = await getDoc(doc(db, "users", userResponse.user.uid));
         if (!userDoc.exists()) {

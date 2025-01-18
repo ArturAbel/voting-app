@@ -1,16 +1,10 @@
 .navbar {
   justify-content: space-between;
   height: var(--height-navbar);
+  align-items: flex-start;
+  padding: 0 6rem;
   display: flex;
-  padding: 2rem;
   width: 100%;
-}
-
-.logoContainer {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 100%;
 }
 
 .links {
@@ -22,26 +16,32 @@
 
 .icons {
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   height: 100%;
   gap: 1rem;
 }
 
 .avatar {
+  background-color: var(--background-green);
   border-radius: 50%;
   position: relative;
   cursor: pointer;
   height: 2.5rem;
   width: 2.5rem;
+}
 
-  /* NOTE:Change later */
-  background-color: rgb(8, 81, 56);
+.image {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .settings {
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background: var(--background-white);
+  box-shadow: var(--shadowbox-dimensional);
+  background: var(--background-light);
+  border: var(--border-black-medium);
   text-transform: capitalize;
   flex-direction: column;
   border-radius: 8px;
@@ -52,4 +52,15 @@
   z-index: 1;
   top: 120%;
   right: 0;
+}
+
+/* NOTE:Move to utilities later */
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

@@ -1,0 +1,68 @@
+.navbar {
+  background-color: var(--background-dark);
+  justify-content: space-between;
+  height: var(--height-navbar);
+  align-items: flex-start;
+  padding: 0 6rem;
+  display: flex;
+  width: 100%;
+}
+
+.links {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.icons {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+}
+
+.avatar {
+  background-color: var(--background-green);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.image {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.settings {
+  box-shadow: var(--shadowbox-dimensional-dark-mode);
+  background: var(--background-dark);
+  border: var(--border-light-medium);
+  color: var(--fontColor-light);
+  text-transform: capitalize;
+  flex-direction: column;
+  border-radius: 8px;
+  position: absolute;
+  padding: 1rem;
+  display: flex;
+  width: 12rem;
+  z-index: 1;
+  top: 120%;
+  right: 0;
+}
+
+/* NOTE:Move to utilities later */
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

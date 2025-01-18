@@ -1,8 +1,10 @@
+import { useThemeStyles } from "../../../../../hooks/useThemeStyles";
 import { Link, useLocation } from "react-router-dom";
-
-import styles from "./LinkNavbar.module.css";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
 const LinkNavbar = ({ to, text }) => {
+  const styles = useThemeStyles(lightStyles, darkStyles);
   const location = useLocation();
   const path = location.pathname;
 

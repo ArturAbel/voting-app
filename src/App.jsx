@@ -8,8 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import PollBoard from "./pages/PollBoard/PollBoard";
 import { LINK } from "./constants/navigation";
 import MyPolls from "./pages/MyPolls/MyPolls";
-import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import About from "./pages/About/About";
 
 function App() {
   const routes = [
@@ -27,6 +26,7 @@ function App() {
       children: [
         { path: `/${LINK.POLL_BOARD}`, element: <PollBoard /> },
         { path: `/${LINK.MY_POLLS}`, element: <MyPolls /> },
+        { path: `/${LINK.ABOUT}`, element: <About /> },
       ],
     },
     {
@@ -42,13 +42,11 @@ function App() {
   const router = createBrowserRouter(routes);
 
   return (
-    <Provider store={store}>
-      <ThemeProvider>
-        <AuthProvider>
-          <RouterProvider router={router} />
-        </AuthProvider>
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

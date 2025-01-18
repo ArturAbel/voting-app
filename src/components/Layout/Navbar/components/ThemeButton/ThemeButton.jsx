@@ -1,17 +1,20 @@
-import { useThemeContext } from "../../../../../context/ThemeContext";
-import { MdOutlineModeNight, MdModeNight } from "react-icons/md";
+import { MdLightMode, MdOutlineLightMode } from "react-icons/md";
+import { useTheme } from "../../../../../context/ThemeContext";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
-import styles from "./ThemeButton.module.css";
+import { useThemeStyles } from "../../../../../hooks/useThemeStyles";
 
 export const ThemeButton = () => {
-  const { toggleTheme, darkTheme } = useThemeContext();
+  const styles = useThemeStyles(lightStyles, darkStyles);
+  const { toggleTheme, theme } = useTheme();
 
   return (
     <>
-      {darkTheme ? (
-        <MdModeNight className={`${styles.icon} ${styles.dark}`} onClick={toggleTheme}></MdModeNight>
+      {theme === "light" ? (
+        <MdLightMode className={styles.icon} onClick={toggleTheme} />
       ) : (
-        <MdOutlineModeNight className={styles.icon} onClick={toggleTheme}></MdOutlineModeNight>
+        <MdOutlineLightMode className={`${styles.icon} ${styles.transparent}`} onClick={toggleTheme} />
       )}
     </>
   );

@@ -1,0 +1,18 @@
+.section {
+  background-color: var(--background-dark);
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.frame {
+  border: var(--border-light-medium);
+  height: var(--height-section);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90vw;
+}
