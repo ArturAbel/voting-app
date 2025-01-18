@@ -1,30 +1,42 @@
+import { browserSessionPersistence, onAuthStateChanged, setPersistence } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../config/firebase";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [userAuth, setUserAuth] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-  //     setIsLoading(true);
-  //     if (currentUser) {
-  //       const idTokenResult = await currentUser.getIdTokenResult();
-  //       setUser(currentUser);
-  //       setIsAdmin(idTokenResult.claims.admin || false);
-  //     } else {
-  //       setUser(null);
-  //       setIsAdmin(false);
-  //     }
-  //     setIsLoading(false);
-  //   });
-  //   return unsubscribe;
-  // }, [auth]);
+  useEffect(() => {
+    const initializeAuth = async () => {
+      try {
+        await setPersistence(auth, browserSessionPersistence);
+      } catch (error) {
+        console.error("Error setting session persistence:", error);
+      }
+    };
 
-  return <AuthContext.Provider value={{ user, isAdmin, isLoading, setUser }}>{children}</AuthContext.Provider>;
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      setIsLoading(true);
+      if (currentUser) {
+        const idTokenResult = await currentUser.getIdTokenResult();
+        setUserAuth(currentUser);
+        setIsAdmin(idTokenResult.claims.admin || false);
+      } else {
+        setUserAuth(null);
+        setIsAdmin(false);
+      }
+      setIsLoading(false);
+    });
+
+    initializeAuth();
+
+    return unsubscribe;
+  }, []);
+
+  return <AuthContext.Provider value={{ userAuth, isAdmin, isLoading, setUserAuth }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);
