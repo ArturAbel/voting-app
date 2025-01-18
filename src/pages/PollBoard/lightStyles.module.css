@@ -1,0 +1,4 @@
+.section {
+  height: var(--height-section);
+  width: 100%;
+}

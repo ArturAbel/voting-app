@@ -1,21 +1,23 @@
+import LogoContainer from "./components/LogoContainer/LogoContainer.jsx";
 import { ThemeButton } from "./components/ThemeButton/ThemeButton.jsx";
 import { LinkSetting } from "./components/LinkSetting/LinkSetting.jsx";
-import { useThemeContext } from "../../../context/ThemeContext.jsx";
 import { NAVBAR_LINKS, SETTING_LINKS } from "./data/Navbar.data.js";
 import { logOut } from "../../../utils/authentication/signOut.js";
+import { useThemeStyles } from "../../../hooks/useThemeStyles.js";
 import LinkNavbar from "./components/LinkNavbar/LinkNavbar.jsx";
 import { LINK } from "../../../constants/navigation.js";
-import Logo from "../../UI/Logo/Logo.jsx";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
+import { useSelector } from "react-redux";
 import { useState } from "react";
-
-import styles from "./Navbar.module.css";
 
 // Connect auth
 const isAdmin = false;
 
 export const Navbar = () => {
+  const { userData } = useSelector((state) => state.user);
+  const styles = useThemeStyles(lightStyles, darkStyles);
   const [showLinks, setShowLinks] = useState(false);
-  const { darkTheme } = useThemeContext();
 
   const handleAvatarClick = () => {
     setShowLinks((prevShowLinks) => !prevShowLinks);
@@ -31,9 +33,7 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logoContainer}>
-        <Logo />
-      </div>
+      <LogoContainer />
       <div className={styles.links}>
         {NAVBAR_LINKS.map(({ text, to }) => (
           <LinkNavbar key={to} text={text} to={to} />
@@ -41,9 +41,8 @@ export const Navbar = () => {
       </div>
       <div className={styles.icons}>
         <ThemeButton />
-        <div onClick={handleAvatarClick} className={styles.avatar}>
-          {/* NOTE:User image */}
-          <img alt={""} />
+        <div onClick={handleAvatarClick} className={`${styles.avatar} ${styles.noSelect}`}>
+          <img src={userData?.profileImage} className={styles.image} alt={""} />
           {showLinks && (
             <div className={styles.settings}>
               {SETTING_LINKS.slice(0, 2).map(({ text, to }) => (

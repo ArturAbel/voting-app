@@ -1,28 +1,30 @@
-import { facebookIcon, linkedinIcon, xIcon, youtubeIcon, sealIcon } from "../../../utils/variables";
+import { useThemeStyles } from "../../hooks/useThemeStyles";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
-import "./Footer.css";
+const About = () => {
+  const styles = useThemeStyles(lightStyles, darkStyles);
 
-export const Footer = () => {
   return (
-    <footer>
+    <section className={styles.section}>
       <div className="footer-left-container">
-        <h2 className="footer-get-in-touch">get in touch</h2>
+        <h1 className={styles.name}>Artur Abel</h1>
         <div className="footer-slogan">
           At Liberty Hill College, we empower every student to soar to new heights. Join us and forge a future full of
           limitless possibilities.
         </div>
         <div className="footer-social-icons">
           <a href="">
-            <img className="social-icon" src={facebookIcon} alt="facebook" />
+            <img className="social-icon" src={""} alt="facebook" />
           </a>
           <a href="">
-            <img className="social-icon" src={linkedinIcon} alt="linkedin" />
+            <img className="social-icon" src={""} alt="linkedin" />
           </a>
           <a href="">
-            <img className="social-icon" src={xIcon} alt="x" />
+            <img className="social-icon" src={""} alt="x" />
           </a>
           <a href="">
-            <img className="social-icon" src={youtubeIcon} alt="youtube" />
+            <img className="social-icon" src={""} alt="youtube" />
           </a>
         </div>
         <p className="footer-copyrights">Copyright ©2024 Liberty Hill College</p>
@@ -58,9 +60,11 @@ export const Footer = () => {
           <p>Liberty Hill College 1234 Academic Drive Knowledge City, XY 56789 USA</p>
           <p>Email: info@libertyhillcollege.edu</p>
           <p>Phone: (555) 123-4567</p>
-          <img className="footer-seal" src={sealIcon} alt="seal" />
+          <img className="footer-seal" src={""} alt="seal" />
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
+
+export default About;

@@ -10,14 +10,14 @@ import { defaultProfileImage } from "../../../constants/data";
 import { randomNameConfig } from "./config/randomNameConfig";
 import LinkSignUp from "./components/LinkSignUp/LinkSignUp";
 import { LOGIN_INPUT_CONFIG } from "./data/LoginForm.data";
-import { getAuth, validatePassword } from "firebase/auth";
 import { getFeedbackMessage } from "./lib/LoginForm.lib";
 import { useAuth } from "../../../context/AuthContext";
 import { LINK } from "../../../constants/navigation";
 import InputFile from "../../UI/InputFile/InputFile";
+import { auth, db } from "../../../config/firebase";
+import { validatePassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { db } from "../../../config/firebase";
 import { Input } from "../../UI/Input/Input";
 import { useEffect, useState } from "react";
 import Logo from "../../UI/Logo/Logo";
@@ -31,8 +31,8 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [formType, setFormType] = useState("Login");
   const [isLoading, setIsLoading] = useState(false);
-  const { setUser: setContextUser } = useAuth();
   const [step, setStep] = useState(1);
+  const { setUserAuth } = useAuth();
   const navigate = useNavigate();
 
   const handleWithEmailAndPassword = async (e) => {
@@ -42,13 +42,13 @@ const LoginForm = () => {
       if (formType === "Login") {
         try {
           userResponse = await signIn(user.email, user.password);
-          setContextUser(userResponse);
+          setUserAuth(userResponse);
           navigate(`/${LINK.POLL_BOARD}`);
         } catch (error) {
           console.error("Failed to log in: ", error);
         }
       } else {
-        const status = await validatePassword(getAuth(), user.password);
+        const status = await validatePassword(auth, user.password);
         const feedbackMessage = getFeedbackMessage(status);
         setErrorMessage(feedbackMessage);
         userResponse = await signUp(user.email, user.password);
@@ -59,8 +59,7 @@ const LoginForm = () => {
           uid: userResponse.uid,
           email: user.email,
         }));
-        // Set auth context
-        setContextUser(userResponse);
+        setUserAuth(userResponse);
         setStep(2);
       }
     } catch (error) {
@@ -75,8 +74,7 @@ const LoginForm = () => {
     try {
       if (formType === "Login") {
         userResponse = await signUpWithGoogle();
-        // Set User Auth
-        setContextUser(userResponse.user);
+        setUserAuth(userResponse);
         const userDoc = await getDoc(doc(db, "users", userResponse.user.uid));
         if (!userDoc.exists()) {
           setUserData((prev) => ({

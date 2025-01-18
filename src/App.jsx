@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import PollBoard from "./pages/PollBoard/PollBoard";
 import { LINK } from "./constants/navigation";
 import MyPolls from "./pages/MyPolls/MyPolls";
+import About from "./pages/About/About";
 
 function App() {
   const routes = [
@@ -25,6 +26,7 @@ function App() {
       children: [
         { path: `/${LINK.POLL_BOARD}`, element: <PollBoard /> },
         { path: `/${LINK.MY_POLLS}`, element: <MyPolls /> },
+        { path: `/${LINK.ABOUT}`, element: <About /> },
       ],
     },
     {

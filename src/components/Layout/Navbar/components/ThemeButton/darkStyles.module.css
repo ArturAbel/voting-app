@@ -1,5 +1,5 @@
 .icon {
-  color: var(--fontColor-dark);
+  color: var(--fontColor-light);
   transition: all 1s;
   cursor: pointer;
   height: 2.8rem;

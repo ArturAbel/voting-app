@@ -13,7 +13,7 @@
 
 .candidate-card {
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
-  background: var(--background-white);
+  background: var(--background-light);
   border-radius: 15px;
   position: relative;
   margin: 0 auto;

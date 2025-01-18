@@ -1,11 +1,13 @@
+import { useThemeStyles } from "../../../../../hooks/useThemeStyles";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 import { useState } from "react";
-
-import styles from "./LinkSetting.module.css";
 
 export const LinkSetting = ({ to, text, onClick }) => {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  const styles = useThemeStyles(lightStyles, darkStyles);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleLinkOnMouseEnter = () => {

@@ -1,5 +1,5 @@
 .quoteContainer {
-  color: var(--background-white);
+  color: var(--background-light);
   justify-content: start;
   flex-direction: column;
   padding: 0 1rem;

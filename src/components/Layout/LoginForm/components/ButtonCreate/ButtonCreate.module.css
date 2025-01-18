@@ -1,6 +1,6 @@
 .button {
-  background-color: var(--fonColor-Main);
-  border: 1px solid var(--fonColor-Main);
+  background-color: var(--background-green);
+  border: 1px solid var(--background-green);
   font-family: var(--font-main);
   color: var(--fontColor-light);
   border-radius: 5px;
