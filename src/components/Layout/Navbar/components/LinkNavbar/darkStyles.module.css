@@ -1,30 +1,33 @@
-.link {
-  box-shadow: var(--shadowbox-dimensional-dark-mode);
-  border: 1.5px solid var(--fontColor-light);
-  color: var(--fontColor-light);
-  padding: 0.2rem 1.5rem;
-  letter-spacing: -0.5px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 400;
-  min-width: 110px;
-}
+@media (min-width: 0px) {
+  .link {
+    box-shadow: var(--shadowbox-dimensional-dark-mode-links);
+    border: 1.5px solid var(--fontColor-light);
+    background-color: var(--background-dark);
+    color: var(--fontColor-light);
+    letter-spacing: -0.5px;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    min-width: 70px;
+  }
 
-.link:hover {
-  box-shadow: var(--shadowbox-dimensional-clicked);
-  animation: shake 0.2s 0.2s infinite linear;
-  border: 1.5px solid var(--background-dark);
-  background-color: var(--background-pink);
-  color: var(--background-dark);
-  transition: 0.3s;
-}
+  .link:hover {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    border: 1.5px solid var(--background-dark);
+    animation: shake 0.2s 0.2s infinite linear;
+    background-color: var(--background-pink);
+    color: var(--background-dark);
+    transition: 0.3s;
+  }
 
-.active {
-  border: 1.5px solid var(--background-dark);
-  box-shadow: var(--shadowbox-dimensional-clicked);
-  background-color: var(--background-pink);
-  color: var(--background-dark);
+  .active {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    border: 1.5px solid var(--background-dark);
+    background-color: var(--background-pink);
+    color: var(--background-dark);
+  }
 }
 
 @keyframes shake {

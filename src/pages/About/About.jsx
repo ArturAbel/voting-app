@@ -1,5 +1,6 @@
 import { useThemeStyles } from "../../hooks/useThemeStyles";
-import { FaLinkedin, FaSquareGit } from "react-icons/fa6";
+import { CiLinkedin } from "react-icons/ci";
+import { LiaGithub } from "react-icons/lia";
 
 import utilStyles from "../../css/utils.module.css";
 import lightStyles from "./lightStyles.module.css";
@@ -21,10 +22,10 @@ const About = () => {
           </div>
           <div className={styles.icons}>
             <a href="">
-              <FaSquareGit className={styles.icon} />
+              <LiaGithub className={styles.icon} />
             </a>
             <a href="">
-              <FaLinkedin className={styles.icon} />
+              <CiLinkedin className={styles.icon} />
             </a>
           </div>
         </div>
@@ -32,7 +33,10 @@ const About = () => {
       <div className={styles.right}>
         <div className={styles.about}>
           PollPal is a fun and simple way to create, share, and participate in polls. It started as a reimagining of my
-          earlier boot-camp project, the LHC Voting App, which was designed specifically for college candidate voting.
+          earlier boot-camp project, the{" "}
+          <span className={styles.span}>
+            LHC Voting App, which was designed specifically for college candidate voting.
+          </span>
           While that project focused on a single use case, PollPal expands on the idea by allowing users to create polls
           for any topic, big or small. Whether it’s deciding what movie to watch, picking a team name, or just sparking
           interesting conversations, PollPal makes group decisions interactive and enjoyable. With PollPal, I wanted to

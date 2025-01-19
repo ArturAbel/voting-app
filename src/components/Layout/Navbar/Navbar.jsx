@@ -38,7 +38,7 @@ export const Navbar = () => {
       <LogoContainer />
       <div className={styles.links}>
         {NAVBAR_LINKS.map(({ text, to }) => (
-          <LinkNavbar key={to} text={text} to={to} />
+          <LinkNavbar key={text} text={text} to={to} />
         ))}
       </div>
       <div className={styles.icons}>
