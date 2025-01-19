@@ -6,7 +6,7 @@ export async function createUserInDB(userId, userData) {
     const docRef = doc(db, "users", userId);
     await setDoc(docRef, {
       ...userData,
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
     });
   } catch (error) {
     console.error("Error creating a user document: ", error);

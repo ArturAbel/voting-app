@@ -1,6 +1,30 @@
-.container {
-  justify-content: center;
-  align-items: flex-start;
-  display: flex;
-  height: 100%;
+/* Phone */
+@media (min-width: 0px) {
+  .container {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+  .container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+}
+
+/* Tablet  */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 4rem;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 6rem;
+  }
 }

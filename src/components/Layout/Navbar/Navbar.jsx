@@ -6,10 +6,12 @@ import { logOut } from "../../../utils/authentication/signOut.js";
 import { useThemeStyles } from "../../../hooks/useThemeStyles.js";
 import LinkNavbar from "./components/LinkNavbar/LinkNavbar.jsx";
 import { LINK } from "../../../constants/navigation.js";
-import lightStyles from "./lightStyles.module.css";
-import darkStyles from "./darkStyles.module.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+
+import utilStyles from "../../../css/utils.module.css";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
 // Connect auth
 const isAdmin = false;
@@ -36,12 +38,12 @@ export const Navbar = () => {
       <LogoContainer />
       <div className={styles.links}>
         {NAVBAR_LINKS.map(({ text, to }) => (
-          <LinkNavbar key={to} text={text} to={to} />
+          <LinkNavbar key={text} text={text} to={to} />
         ))}
       </div>
       <div className={styles.icons}>
         <ThemeButton />
-        <div onClick={handleAvatarClick} className={`${styles.avatar} ${styles.noSelect}`}>
+        <div onClick={handleAvatarClick} className={`${styles.avatar} ${utilStyles.noSelect}`}>
           <img src={userData?.profileImage} className={styles.image} alt={""} />
           {showLinks && (
             <div className={styles.settings}>

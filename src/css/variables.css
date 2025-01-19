@@ -26,8 +26,10 @@
 
   /* Shadow box */
   --shadowbox-dimensional: var(--background-green) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
-  --shadowbox-dimensional-dark-mode: var(--background-light) 4px 4px 0 0, var(--background-light) 4px 4px 0 1px;
+  --shadowbox-dimensional-dark-mode: var(--background-pink) 4px 4px 0 0, var(--background-light) 4px 4px 0 1px;
+  --shadowbox-dimensional-dark-mode-links: var(--background-light) 4px 4px 0 0, var(--background-light) 4px 4px 0 1px;
   --shadowbox-dimensional-clicked: var(--background-light) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
+  --shadowbox-dimensional-clicked-dark-mode: var(--background-pink) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
 
   /* App font color */
   --fontColor-dark-secondary: rgb(94, 94, 94);
@@ -45,7 +47,6 @@
   --fontSize-footer-listItem: 1.5rem;
   --fontSize-admin-user-tab: 1.2rem;
   --fontSize-footer-address: 1.2rem;
-  --fontSize-footer-slogan: 1.3rem;
   --fontSize-navbar-links: 1.4rem;
   --fontSize-admin-title: 2rem;
 }

@@ -1,16 +1,18 @@
-.quoteContainer {
-  color: var(--background-light);
-  justify-content: start;
-  flex-direction: column;
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  height: 30rem;
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-}
+/* Phone */
+@media (min-width: 0px) {
+  .quoteContainer {
+    color: var(--background-light);
+    justify-content: start;
+    flex-direction: column;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+  }
 
-.quote {
-  text-wrap: balance;
-  font-size: 2.5rem;
+  .quote {
+    text-wrap: balance;
+    font-size: 2.5rem;
+  }
 }
