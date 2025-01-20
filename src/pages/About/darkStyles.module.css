@@ -1,44 +1,58 @@
-/* TODO:Update dark css after completing light */
-
 .section {
+  background-color: var(--background-dark);
   color: var(--fontColor-light);
   display: flex;
   height: 100%;
 }
 
 .left {
-  display: flex;
-}
-
-.leftContainer {
-  box-shadow: var(--shadowbox-dimensional-dark-mode);
-  border: var(--border-light-medium);
+  box-shadow: var(--shadowbox-dimensional-dark-mode-links);
+  background-color: var(--background-gray);
+  border: var(--border-black-medium);
   border-radius: 8px;
   display: flex;
-}
-
-.name {
-  text-transform: capitalize;
-  letter-spacing: -2px;
+  padding: 1rem;
 }
 
 .right {
-  box-shadow: var(--shadowbox-dimensional-dark-mode);
-  border: var(--border-light-medium);
+  box-shadow: var(--shadowbox-dimensional-dark-mode-links);
+  background-color: var(--background-gray);
+  border: var(--border-black-medium);
   border-radius: 8px;
+}
+
+.popup {
+  box-shadow: var(--shadowbox-dimensional-dark-mode-links);
+  background-color: var(--background-dark);
+  border: var(--border-black-medium);
+  object-fit: contain;
+  border-radius: 10px;
+  position: absolute;
+  overflow: hidden;
+  height: 200px;
+  padding: 2rem;
+  width: 350px;
+}
+
+.image {
+  border: var(--border-black-medium);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .icons {
   align-items: center;
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .icon {
-  color: var(--fontColor-light);
-  transition: 0.6s;
-  height: 4rem;
-  width: 4rem;
+  color: var(--background-light);
+  transition: transform 0.4s;
+  cursor: pointer;
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 .icon:hover {
@@ -51,8 +65,9 @@
 }
 
 .span {
-  background-color: var(--background-pink);
-  color: var(--fontColor-dark);
+  font-family: var(--font-secondary);
+  letter-spacing: -1px;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -68,16 +83,7 @@
 
   .left {
     flex-direction: column;
-    height: 100%;
     width: 100%;
-  }
-
-  .leftContainer {
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 2rem;
-    height: 100%;
-    gap: 2rem;
   }
 
   .name {
@@ -89,7 +95,6 @@
   .right {
     margin-bottom: 5em;
     padding: 2rem;
-    height: 100%;
   }
 
   .about {
@@ -114,7 +119,7 @@
   }
 
   .left {
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .name {
@@ -140,29 +145,19 @@
 
   .name {
     text-align: left;
-    font-size: 9rem;
-    height: 25%;
+    font-size: 6rem;
+    line-height: 0;
   }
 
   .left {
     flex-direction: column;
     display: flex;
-    height: 80%;
-    width: 50%;
-  }
-
-  .leftContainer {
-    flex-direction: column;
-    padding: 2rem;
-    display: flex;
-    gap: 4rem;
+    width: 40%;
   }
 
   .right {
-    margin-bottom: 0em;
-    padding: 2rem;
-    height: 80%;
     width: 40%;
+    margin: 0;
   }
 
   .about {
@@ -175,7 +170,8 @@
   }
 
   .span {
-    padding: 0.1rem 1.2rem;
+    padding: 0.1rem 1rem;
+    font-size: 1.9rem;
     margin: 0;
   }
 }
