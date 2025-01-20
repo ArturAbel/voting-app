@@ -42,9 +42,8 @@
     height: var(--height-login-form);
     flex-direction: column;
     border-radius: 10px;
-    align-items: end;
-    overflow: hidden;
-    display: block;
+    align-items: center;
+    display: flex;
     width: 35rem;
   }
 }

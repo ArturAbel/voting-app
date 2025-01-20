@@ -61,7 +61,7 @@ function AnimationContainer() {
     };
 
     p.setup = () => {
-      p.createCanvas(350, 410);
+      p.createCanvas(350, 430);
       engine = Engine.create();
       world = engine.world;
 
