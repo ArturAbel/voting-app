@@ -10,7 +10,8 @@
 
   /* App background colors */
   --background-candidate-cards: #ef767a;
-  --background-secondary: #e0e1e9;
+  --background-secondary: #E2F3E9;
+  --background-secondary-dark-mode: #f1f9f4;
   --background-error: #ef767a;
   --background-light: #ffffff;
   --background-dark: #191919;
