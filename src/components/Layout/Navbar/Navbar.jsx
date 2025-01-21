@@ -1,3 +1,4 @@
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import LogoContainer from "./components/LogoContainer/LogoContainer.jsx";
 import { ThemeButton } from "./components/ThemeButton/ThemeButton.jsx";
 import { LinkSetting } from "./components/LinkSetting/LinkSetting.jsx";
@@ -16,10 +17,21 @@ import darkStyles from "./darkStyles.module.css";
 // Connect auth
 const isAdmin = false;
 
+const SETTINGS_CONFIG = {
+  hidden: { opacity: 0, y: -10, transition: { type: "spring", mass: 1 } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 5,
+    transition: { type: "spring", stiffness: 100, damping: 10 },
+  },
+};
+
 export const Navbar = () => {
   const { userData } = useSelector((state) => state.user);
   const styles = useThemeStyles(lightStyles, darkStyles);
   const [showLinks, setShowLinks] = useState(false);
+  const animationControls = useAnimationControls();
 
   const handleAvatarClick = () => {
     setShowLinks((prevShowLinks) => !prevShowLinks);
@@ -43,18 +55,31 @@ export const Navbar = () => {
       </div>
       <div className={styles.icons}>
         <ThemeButton />
-        <div onClick={handleAvatarClick} className={`${styles.avatar} ${utilStyles.noSelect}`}>
+        <motion.div
+          className={`${styles.avatar} ${utilStyles.noSelect}`}
+          onTap={() => animationControls.start("tap")}
+          onClick={handleAvatarClick}
+        >
           <img src={userData?.profileImage} className={styles.image} alt={""} />
-          {showLinks && (
-            <div className={styles.settings}>
-              {SETTING_LINKS.slice(0, 2).map(({ text, to }) => (
-                <LinkSetting text={text} to={to} key={to} />
-              ))}
-              {isAdmin && SETTING_LINKS.slice(2, 3).map(({ text, to }) => <LinkSetting text={text} to={to} key={to} />)}
-              <LinkSetting onClick={handleLogout} to={`/${LINK.LOGIN}`} text={"Logout"} />
-            </div>
-          )}
-        </div>
+          <AnimatePresence>
+            {showLinks && (
+              <motion.div
+                animate={showLinks ? "visible" : "hidden"}
+                initial={SETTINGS_CONFIG.hidden}
+                className={styles.settings}
+                variants={SETTINGS_CONFIG}
+                exit="hidden"
+              >
+                {SETTING_LINKS.slice(0, 2).map(({ text, to }) => (
+                  <LinkSetting text={text} to={to} key={to} />
+                ))}
+                {isAdmin &&
+                  SETTING_LINKS.slice(2, 3).map(({ text, to }) => <LinkSetting text={text} to={to} key={to} />)}
+                <LinkSetting onClick={handleLogout} to={`/${LINK.LOGIN}`} text={"Logout"} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </nav>
   );

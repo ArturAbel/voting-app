@@ -18,6 +18,12 @@ export const POPUP_CONFIG = {
 };
 
 export const SPAN_CONFIG = {
-  rest: { background: "inherit", color: "inherit" },
-  active: { background: "#191919", color: "#ffff" },
+  LIGHT: {
+    rest: { background: "inherit", color: "inherit" },
+    active: { background: "#191919", color: "#ffff" },
+  },
+  DARK: {
+    rest: { background: "inherit", color: "inherit" },
+    active: { background: "#ffd6e4", color: "#191919" },
+  },
 };

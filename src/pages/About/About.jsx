@@ -1,5 +1,6 @@
 import { motion, useAnimationControls } from "framer-motion";
 import { useThemeStyles } from "../../hooks/useThemeStyles";
+import { useTheme } from "../../context/ThemeContext";
 import { POPUP_CONFIG, SPAN_CONFIG } from "./config";
 import { CiLinkedin } from "react-icons/ci";
 import { LiaGithub } from "react-icons/lia";
@@ -12,6 +13,7 @@ import darkStyles from "./darkStyles.module.css";
 const About = () => {
   const styles = useThemeStyles(lightStyles, darkStyles);
   const animationControls = useAnimationControls();
+  const { theme } = useTheme();
 
   return (
     <section className={`${styles.section} ${utilStyles.noSelect}`}>
@@ -42,11 +44,11 @@ const About = () => {
         <div className={styles.about}>
           {content.pollPalStart}
           <motion.span
+            variants={theme === "light" ? SPAN_CONFIG.LIGHT : SPAN_CONFIG.DARK}
             onHoverStart={() => animationControls.start("active")}
             onHoverEnd={() => animationControls.start("rest")}
-            initial={SPAN_CONFIG.rest}
+            initial={SPAN_CONFIG.LIGHT.rest}
             className={styles.span}
-            variants={SPAN_CONFIG}
             whileHover={"active"}
           >
             {content.marked}
