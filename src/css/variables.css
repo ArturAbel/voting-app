@@ -18,6 +18,7 @@
   --background-green: #06d6a0;
   --background-pink: #ffd6e4;
   --background-gray: rgba(19, 14, 14, 0.5);
+  --background-hover: rgba(19, 14, 14, 0.2);
 
   /* Filter */
   --filter-like-icon: invert(58%) sepia(52%) saturate(2698%) hue-rotate(315deg) brightness(103%) contrast(87%);

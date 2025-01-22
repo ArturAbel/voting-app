@@ -1,3 +1,5 @@
+@import "../../../../../css/utils.module.css";
+
 @media (min-width: 0px) {
   .link {
     background-color: var(--background-light);
@@ -25,19 +27,5 @@
     box-shadow: var(--shadowbox-dimensional-clicked);
     background-color: var(--background-dark);
     color: var(--background-light);
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(3deg);
-  }
-
-  100% {
-    transform: rotate(-3deg);
   }
 }

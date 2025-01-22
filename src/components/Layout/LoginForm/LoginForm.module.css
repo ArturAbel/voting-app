@@ -22,7 +22,8 @@
 }
 
 .header {
-  width: 100%;
+  align-self: flex-start;
+  width: 10rem;
 }
 
 .title {

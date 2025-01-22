@@ -1,0 +1,22 @@
+{
+  "title": "Best Programming Language",
+  "options": [
+    { "id": "option1", "text": "JavaScript", "votes": 10 },
+    { "id": "option2", "text": "Python", "votes": 15 },
+    { "id": "option3", "text": "Python", "votes": 7 },
+    { "id": "option4", "text": "Python", "votes": 12 }
+  ],
+  "createdBy": "userID123",
+  "createdByImage":"",
+  "createdAt": "2025-01-22T12:34:56.789Z",
+  "visibility": "public",
+  "participants": ["userID124", "userID125"],
+  "likedBy": ["userID126"],
+  "comments": [
+    {
+      "userId": "userID127",
+      "text": "I love Python!",
+      "timestamp": "2025-01-22T12:45:56.789Z"
+    }
+  ]
+}
