@@ -2,7 +2,7 @@ import { useThemeStyles } from "../../../hooks/useThemeStyles";
 import lightStyles from "./lightStyles.module.css";
 import darkStyles from "./darkStyles.module.css";
 
-const Logo = () => {
+const Logo = ({ displayText = true }) => {
   const styles = useThemeStyles(lightStyles, darkStyles);
 
   return (
@@ -12,9 +12,7 @@ const Logo = () => {
         <div className={`${styles.logoBar} ${styles.center}`} />
         <div className={`${styles.logoBar} ${styles.right}`} />
       </div>
-      <div className={styles.logoTextContainer}>
-        <p className={styles.logoText}>PollPal</p>
-      </div>
+      {displayText && <div className={styles.logoText}>PollPal</div>}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { logOut } from "../../../utils/authentication/signOut.js";
 import { useThemeStyles } from "../../../hooks/useThemeStyles.js";
 import LinkNavbar from "./components/LinkNavbar/LinkNavbar.jsx";
 import { LINK } from "../../../constants/navigation.js";
+import { SETTINGS_CONFIG } from "./config.js";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -16,16 +17,6 @@ import darkStyles from "./darkStyles.module.css";
 
 // Connect auth
 const isAdmin = false;
-
-const SETTINGS_CONFIG = {
-  hidden: { opacity: 0, y: -10, transition: { type: "spring", mass: 1 } },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 5,
-    transition: { type: "spring", stiffness: 100, damping: 10 },
-  },
-};
 
 export const Navbar = () => {
   const { userData } = useSelector((state) => state.user);
