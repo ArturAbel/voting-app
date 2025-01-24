@@ -1,7 +1,7 @@
 :root {
   /* Font */
-  --font-secondary: "Parkinsans", sans-serif;
   --font-main: "Poppins", sans-serif;
+  --font-secondary: "Belanosima", sans-serif;
 
   /* Height */
   --height-section: calc(100vh - var(--height-navbar) - var(--height-navbar));
