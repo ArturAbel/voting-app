@@ -1,0 +1,99 @@
+@import "../../../css//utils.module.css";
+
+@media (min-width: 0px) {
+  .filter {
+    background-color: var(--background-secondary);
+    border-bottom: var(--border-black-medium);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 5rem;
+    width: 100%;
+  }
+
+  .searchContainer {
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .input {
+    background-color: var(--background-light);
+    border: 1.5px solid var(--fontColor-dark);
+    font-family: var(--font-main);
+    padding-left: 1.2rem;
+    border-radius: 8px;
+    min-height: 22px;
+  }
+
+  .input::placeholder {
+    color: var(--background-hover);
+    letter-spacing: -0.5px;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  .searchIcon {
+    transform: translateY(-50%);
+    position: absolute;
+    font-size: 1.5rem;
+    right: 1rem;
+    top: 50%;
+  }
+
+  .buttons {
+    padding-right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .button {
+    background-color: var(--background-light);
+    border: 1.5px solid var(--fontColor-dark);
+    box-shadow: var(--shadowbox-dimensional);
+    color: var(--fontColor-dark);
+    letter-spacing: -0.5px;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    min-width: 40px;
+  }
+
+  .button:hover {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    animation: shake 0.2s 0.2s infinite linear;
+    background-color: var(--background-dark);
+    color: var(--background-light);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    animation: shake 0.2s 0.2s infinite linear;
+    background-color: var(--background-dark);
+    color: var(--background-light);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .active {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    background-color: var(--background-dark);
+    color: var(--background-light);
+  }
+}
+
+@media (min-width: 768px) {
+  .searchContainer {
+    padding-left: 4rem;
+    position: relative;
+  }
+  .buttons {
+    padding-right: 4rem;
+    gap: 1rem;
+  }
+}

@@ -31,9 +31,9 @@
   border: var(--border-black-medium);
   object-fit: contain;
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
-  height: 200px;
+  height: 220px;
   padding: 2rem;
   width: 350px;
 }
@@ -136,7 +136,7 @@
 }
 
 /* Laptop */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .section {
     justify-content: center;
     flex-direction: row;
@@ -175,7 +175,7 @@
 
   .span {
     padding: 0.1rem 1rem;
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     margin: 0;
   }
 }
