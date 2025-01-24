@@ -6,7 +6,6 @@ import { CiLinkedin } from "react-icons/ci";
 import { LiaGithub } from "react-icons/lia";
 import content from "./content.json";
 
-import utilStyles from "../../css/utils.module.css";
 import lightStyles from "./lightStyles.module.css";
 import darkStyles from "./darkStyles.module.css";
 
@@ -16,7 +15,7 @@ const About = () => {
   const { theme } = useTheme();
 
   return (
-    <section className={`${styles.section} ${utilStyles.noSelect}`}>
+    <section className={styles.section}>
       <div className={styles.left}>
         <div className={styles.about}>
           {content.aboutStart}

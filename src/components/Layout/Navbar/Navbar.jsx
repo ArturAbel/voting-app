@@ -11,7 +11,6 @@ import { SETTINGS_CONFIG } from "./config.js";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
-import utilStyles from "../../../css/utils.module.css";
 import lightStyles from "./lightStyles.module.css";
 import darkStyles from "./darkStyles.module.css";
 
@@ -46,14 +45,10 @@ export const Navbar = () => {
       </div>
       <div className={styles.icons}>
         <ThemeButton />
-        <motion.div
-          className={`${styles.avatar} ${utilStyles.noSelect}`}
-          onTap={() => animationControls.start("tap")}
-          onClick={handleAvatarClick}
-        >
+        <motion.div className={styles.avatar} onTap={() => animationControls.mount("tap")} onClick={handleAvatarClick}>
           <img src={userData?.profileImage} className={styles.image} alt={""} />
-          <AnimatePresence>
-            {showLinks && (
+          {showLinks && (
+            <AnimatePresence>
               <motion.div
                 animate={showLinks ? "visible" : "hidden"}
                 initial={SETTINGS_CONFIG.hidden}
@@ -68,8 +63,8 @@ export const Navbar = () => {
                   SETTING_LINKS.slice(2, 3).map(({ text, to }) => <LinkSetting text={text} to={to} key={to} />)}
                 <LinkSetting onClick={handleLogout} to={`/${LINK.LOGIN}`} text={"Logout"} />
               </motion.div>
-            )}
-          </AnimatePresence>
+            </AnimatePresence>
+          )}
         </motion.div>
       </div>
     </nav>

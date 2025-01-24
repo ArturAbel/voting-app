@@ -19,6 +19,9 @@
   --background-pink: #ffd6e4;
   --background-gray: rgba(19, 14, 14, 0.5);
   --background-hover: rgba(19, 14, 14, 0.2);
+  --background-chip-1: #e4c8df;
+  --background-chip-2: #d7e6ea;
+  --background-delete: #c82d35;
 
   /* Filter */
   --filter-like-icon: invert(58%) sepia(52%) saturate(2698%) hue-rotate(315deg) brightness(103%) contrast(87%);
@@ -34,6 +37,7 @@
     var(--background-light) 0px -0.5px 0 0.4px;
   --shadowbox-dimensional-clicked: var(--background-light) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
   --shadowbox-dimensional-clicked-dark-mode: var(--background-pink) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
+  --shadowbox-dimensional-card: var(--background-dark) 1px 1px 0 0.1px;
 
   /* App font color */
   --fontColor-dark-secondary: rgb(94, 94, 94);
