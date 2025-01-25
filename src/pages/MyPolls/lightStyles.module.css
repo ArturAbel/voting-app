@@ -1,6 +1,5 @@
-@import "../../css/utils.module.css";
-
 @media (min-width: 0px) {
   .section {
+    background-color: var(--background-light);
   }
 }

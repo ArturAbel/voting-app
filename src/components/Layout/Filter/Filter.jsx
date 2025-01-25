@@ -1,12 +1,15 @@
 import { checkIfPollExpired } from "../../../utils/content/text";
+import { useThemeStyles } from "../../../hooks/useThemeStyles";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
 
-import styles from "./styles.module.css";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
 const Filter = ({ polls, setDisplayedPolls }) => {
   const [isButtonClicked, setIsButtonClicked] = useState({ privatePolls: false, openPolls: false });
   const [filteredPolls, setFilteredPolls] = useState(polls);
+  const styles = useThemeStyles(lightStyles, darkStyles);
 
   const handleInputChange = (e) => {
     const value = e.target.value.trim();

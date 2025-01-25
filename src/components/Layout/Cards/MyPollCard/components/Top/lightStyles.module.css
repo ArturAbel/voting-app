@@ -66,7 +66,7 @@
 
   .option:hover {
     background-color: var(--background-dark);
-    color: var(--background-light);
+    color: var(--fontColor-light);
   }
 
   .delete:hover {

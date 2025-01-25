@@ -1,10 +1,14 @@
 import { setCapitalSentence } from "../../../../../../utils/content/text";
+import { useThemeStyles } from "../../../../../../hooks/useThemeStyles";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import { useEffect, useRef, useState } from "react";
 
-import styles from "./styles.module.css";
+import lightStyles from "./lightStyles.module.css";
+import darkStyles from "./darkStyles.module.css";
 
 const Top = ({ poll }) => {
+  const styles = useThemeStyles(lightStyles, darkStyles);
+
   const [isClicked, setIsClicked] = useState(false);
   const popupRef = useRef(null);
 
