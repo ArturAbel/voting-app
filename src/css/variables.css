@@ -20,7 +20,9 @@
   --background-gray: rgba(19, 14, 14, 0.5);
   --background-hover: rgba(19, 14, 14, 0.2);
   --background-chip-1: #e4c8df;
+  --background-chip-1-dark: #a54d94;
   --background-chip-2: #d7e6ea;
+  --background-chip-2-dark: #3e8ca2;
   --background-delete: #c82d35;
 
   /* Filter */
@@ -38,6 +40,7 @@
   --shadowbox-dimensional-clicked: var(--background-light) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
   --shadowbox-dimensional-clicked-dark-mode: var(--background-pink) 4px 4px 0 0, var(--background-dark) 4px 4px 0 1px;
   --shadowbox-dimensional-card: var(--background-dark) 1px 1px 0 0.1px;
+  --shadowbox-dimensional-card-dark-mode: var(--background-light) 1px 1px 0 0.1px;
 
   /* App font color */
   --fontColor-dark-secondary: rgb(94, 94, 94);

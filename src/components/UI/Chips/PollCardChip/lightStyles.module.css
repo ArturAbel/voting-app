@@ -1,6 +1,6 @@
 .chip {
   box-shadow: var(--shadowbox-dimensional-card);
-  border: 1px solid var(--background-gray);
+  border: 1px solid var(--background-dark);
   justify-content: center;
   border-radius: 10px;
   align-items: center;
