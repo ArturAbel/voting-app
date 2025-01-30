@@ -6,8 +6,15 @@
     border-radius: 10px;
     appearance: none;
     overflow: hidden;
-    height: 8px;
     width: 100%;
+  }
+
+  .small {
+    height: 8px;
+  }
+
+  .big {
+    height: 12px;
   }
 
   .progress::-webkit-progress-bar {

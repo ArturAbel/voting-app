@@ -17,6 +17,7 @@ const Middle = ({ poll }) => {
               percent={countPercentage(option.votes, sumVotes(poll))}
               maxVotes={sumVotes(poll)}
               votes={option.votes}
+              height={"small"}
               key={option.id}
             />
           );

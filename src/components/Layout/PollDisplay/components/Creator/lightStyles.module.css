@@ -1,0 +1,29 @@
+.createdContainer {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.user {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.createdImageContainer {
+  background-color: var(--background-green);
+  border-radius: 50%;
+  overflow: hidden;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.createdImage {
+  height: 100%;
+  width: 100%;
+}
+
+.createdName {
+  color: var(--fontColor-dark);
+}
