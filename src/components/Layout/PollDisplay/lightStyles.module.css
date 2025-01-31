@@ -32,11 +32,18 @@
 
 .title {
   text-wrap-style: pretty;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   width: 100%;
 }
 
 .votes {
   justify-content: space-between;
   display: flex;
+}
+
+.options {
+  flex-direction: column;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.5rem;
 }

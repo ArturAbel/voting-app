@@ -14,7 +14,14 @@
   }
 
   .big {
-    height: 12px;
+    height: 14px;
+  }
+
+  .labelContainer {
+    justify-content: space-between;
+    font-size: 1.3rem;
+    display: flex;
+    width: 100%;
   }
 
   .progress::-webkit-progress-bar {

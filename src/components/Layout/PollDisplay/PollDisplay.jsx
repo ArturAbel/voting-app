@@ -24,13 +24,9 @@ const PollDisplay = ({ selectedPoll, setSelectedPoll }) => {
           <VscClose className={lightStyles.closeButton} onClick={handleClosePoll} />
         </div>
         <div className={lightStyles.title}>{selectedPoll.title}</div>
+        {/* Dates as chips with popup */}
         <Dates selectedPoll={selectedPoll} />
         <Creator selectedPoll={selectedPoll} />
-
-        <div className={lightStyles.votes}>
-          <div>Results:</div>
-          <div>{`${votesSum} votes`}</div>
-        </div>
 
         <div className={lightStyles.options}>
           {selectedPoll.options.map((option) => (

@@ -8,10 +8,13 @@ const CardProgressBar = ({ votes, maxVotes, percent, label, height = "big" }) =>
 
   return (
     <>
-      {label && <div>{label}</div>}
-      <progress className={`${styles.progress} ${styles[height]}`} value={votes} max={maxVotes}>
-        {percent}
-      </progress>
+      {label && (
+        <div className={styles.labelContainer}>
+          <div className={styles.label}>{label}</div>
+          <span className={styles.percentLabel}>{Math.floor(percent)}%</span>
+        </div>
+      )}
+      <progress className={`${styles.progress} ${styles[height]}`} value={votes} max={maxVotes} />
     </>
   );
 };
