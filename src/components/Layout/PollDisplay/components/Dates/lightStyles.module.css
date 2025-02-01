@@ -1,0 +1,7 @@
+.dates {
+  align-items: center;
+  font-size: 1rem;
+  display: flex;
+  height: 2rem;
+  gap: 1rem;
+}

@@ -1,32 +1,64 @@
 @media (min-width: 0px) {
   .progress {
-    background-color: var(--background-hover);
-    border: var(--border-black-medium);
+    background-color: var(--background-progressbar);
     -webkit-appearance: none;
     border-radius: 10px;
     appearance: none;
     overflow: hidden;
-    height: 8px;
     width: 100%;
   }
 
-  .progress::-webkit-progress-bar {
-    background-color: var(--background-hover);
+  .progressTest {
+    background-color: var(--background-progressbar);
+    -webkit-appearance: none;
+    border-radius: 10px;
+    margin-left: 3rem;
+    appearance: none;
+    overflow: hidden;
+    width: 90%;
+  }
+
+  .small {
+    height: 8px;
+  }
+
+  .big {
+    height: 14px;
+  }
+
+  .labelContainer {
+    justify-content: space-between;
+    font-size: 1.3rem;
+    display: flex;
+    width: 100%;
+  }
+
+  .checkbox {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .progress::-webkit-progress-bar,
+  .progressTest::-webkit-progress-bar {
+    background-color: var(--background-progressbar);
     border-radius: 10px;
   }
 
-  .progress::-webkit-progress-value {
-    border-right: 2px solid var(--background-dark);
-    background: var(--background-green);
-    border-radius: 10px 0 0 10px;
-  }
-
-  .progress::-moz-progress-bar {
+  .progress::-webkit-progress-value,
+  .progressTest::-webkit-progress-value {
     background: var(--background-green);
     border-radius: 10px;
   }
 
-  .progress::-ms-fill {
+  .progress::-moz-progress-bar,
+  .progressTest::-moz-progress-bar {
+    background: var(--background-green);
+    border-radius: 10px;
+  }
+
+  .progress::-ms-fill,
+  .progressTest::-ms-fill {
     background: var(--background-green);
     border-radius: 10px;
   }

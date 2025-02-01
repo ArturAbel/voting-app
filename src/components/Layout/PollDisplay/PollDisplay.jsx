@@ -1,48 +1,47 @@
 import { VscClose } from "react-icons/vsc";
+import Dates from "./components/Dates/Dates";
+import Creator from "./components/Creator/Creator";
+import { countPercentage, sumVotes } from "../../../utils/content/math";
 
 import lightStyles from "./lightStyles.module.css";
+import CardProgressBar from "../../UI/ProgressBar/CardProgressBar/CardProgressBar";
 
 const PollDisplay = ({ selectedPoll, setSelectedPoll }) => {
+  const votesSum = sumVotes(selectedPoll);
+
   const handleClosePoll = () => {
     setSelectedPoll(null);
   };
 
   console.log("selectedPoll: ", selectedPoll);
 
-  const fromDate = new Date(selectedPoll.createdAt);
-  const toDate = new Date(selectedPoll.closeAt);
-  const localFromDate = fromDate.toLocaleDateString();
-  const localToDate = toDate.toLocaleDateString();
-
+  if (!selectedPoll) return <div>Loading...</div>;
 
   return (
     <div className={lightStyles.section}>
       <div className={lightStyles.card}>
-
         <div className={lightStyles.closeContainer}>
           <VscClose className={lightStyles.closeButton} onClick={handleClosePoll} />
         </div>
+        <div className={lightStyles.title}>{selectedPoll.title}</div>
+        {/* Dates with popup */}
 
         <div className={lightStyles.dates}>
-          {/* Dates create chip */}
-          <div className={lightStyles.from}>Created: {localFromDate}</div>
-          <div className={lightStyles.to}>Ends: {localToDate}</div>
+          <Creator selectedPoll={selectedPoll} />
+          <Dates selectedPoll={selectedPoll} />
         </div>
 
-
-        <div className={lightStyles.title}>{selectedPoll.title}</div>
-
-
-        {/*  */}
-        <div className={lightStyles.createdContainer}>
-            <div className={lightStyles.createdImageContainer}>
-              <img className={lightStyles.createdImage} src={selectedPoll.createdByImage} alt={selectedPoll.pollId} />
-            </div>
-            <div className={lightStyles.createdName}>{selectedPoll.createdBy}</div>
+        <div className={lightStyles.options}>
+          {selectedPoll.options.map((option) => (
+            <CardProgressBar
+              percent={countPercentage(option.votes, votesSum)}
+              votes={option.votes}
+              maxVotes={votesSum}
+              label={option.text}
+              key={option.id}
+            />
+          ))}
         </div>
-
-        
-        {/*  */}
       </div>
 
       {/* Comment Container */}
