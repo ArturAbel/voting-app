@@ -2,9 +2,9 @@ import lightStyles from "./lightStyles.module.css";
 
 const CheckBox = () => {
   return (
-    <label className="container">
-      <input type="checkbox" checked="checked" />
-      <div className="checkmark"></div>
+    <label className={lightStyles.container}>
+      <input type="checkbox" />
+      <div className={lightStyles.checkmark}></div>
     </label>
   );
 };

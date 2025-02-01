@@ -1,3 +1,6 @@
+import PollCardChip from "../../../../UI/Chips/PollCardChip/PollCardChip";
+import { CHIP } from "../../../../../constants/data";
+
 import lightStyles from "./lightStyles.module.css";
 
 const Dates = ({ selectedPoll }) => {
@@ -8,8 +11,8 @@ const Dates = ({ selectedPoll }) => {
 
   return (
     <div className={lightStyles.dates}>
-      <div className={lightStyles.from}>Created: {localFromDate}</div>
-      <div className={lightStyles.to}>Ends: {localToDate}</div>
+      <PollCardChip text={localFromDate} type={CHIP.createdAt} />
+      <PollCardChip text={localToDate} type={CHIP.createdAt} />
     </div>
   );
 };

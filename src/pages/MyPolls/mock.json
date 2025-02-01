@@ -8,12 +8,16 @@
       { "id": "option3", "text": "Python", "votes": 4 },
       { "id": "option4", "text": "Python", "votes": 1 }
     ],
-    "createdBy": "userID123",
+    "createdBy": { "name": "userID123", "img": "/assets/images/users/avatar.png" },
     "createdByImage": "/assets/images/users/avatar.png",
     "createdAt": "2025-01-22T12:34:56.789Z",
     "closeAt": "2026-01-27T12:34:56.789Z",
     "visibility": "public",
-    "participants": ["userID124", "userID125"],
+    "participants": [
+      { "user": "userID124", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID125", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID126", "img": "/assets/images/users/avatar.png" }
+    ],
     "likedBy": ["userID126"],
     "comments": [
       {
@@ -37,12 +41,16 @@
       { "id": "option3", "text": "Angular", "votes": 20 },
       { "id": "option4", "text": "Svelte", "votes": 22 }
     ],
-    "createdBy": "userID456",
+    "createdBy": { "name": "userID124", "img": "/assets/images/users/avatar.png" },
     "createdByImage": "/assets/images/users/avatar.png",
     "createdAt": "2025-01-20T15:23:45.123Z",
     "closeAt": "2025-01-23T15:23:45.123Z",
     "visibility": "private",
-    "participants": ["userID457", "userID458", "userID459"],
+    "participants": [
+      { "user": "userID124", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID125", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID126", "img": "/assets/images/users/avatar.png" }
+    ],
     "likedBy": ["userID460", "userID461"],
     "comments": [
       {

@@ -36,6 +36,10 @@
   width: 100%;
 }
 
+.dates {
+  display: flex;
+}
+
 .votes {
   justify-content: space-between;
   display: flex;

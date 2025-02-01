@@ -18,3 +18,7 @@
 .status {
   background-color: var(--background-chip-2);
 }
+
+.createdAt {
+  background-color: var(--background-progressbar);
+}
