@@ -9,22 +9,23 @@
   --height-navbar: 6rem;
 
   /* App background colors */
-  --background-candidate-cards: #ef767a;
-  --background-secondary: #e2f3e9;
   --background-secondary-dark-mode: #f1f9f4;
+  --background-hover: rgba(19, 14, 14, 0.2);
+  --background-gray: rgba(19, 14, 14, 0.5);
+  --background-candidate-cards: #ef767a;
+  --background-dark: rgb(25, 25, 25);
+  --background-progressbar: #e5e5e5;
+  --background-chip-1-dark: #a54d94;
+  --background-chip-2-dark: #3e8ca2;
+  --background-secondary: #e2f3e9;
+  --background-hashtag: #f7f7f7;
+  --background-chip-1: #e4c8df;
+  --background-chip-2: #d7e6ea;
+  --background-delete: #c82d35;
   --background-error: #ef767a;
   --background-light: #ffffff;
-  --background-dark: rgb(25, 25, 25);
   --background-green: #06d6a0;
   --background-pink: #ffd6e4;
-  --background-gray: rgba(19, 14, 14, 0.5);
-  --background-progressbar: #e5e5e5;
-  --background-hover: rgba(19, 14, 14, 0.2);
-  --background-chip-1: #e4c8df;
-  --background-chip-1-dark: #a54d94;
-  --background-chip-2: #d7e6ea;
-  --background-chip-2-dark: #3e8ca2;
-  --background-delete: #c82d35;
 
   /* Filter */
   --filter-like-icon: invert(58%) sepia(52%) saturate(2698%) hue-rotate(315deg) brightness(103%) contrast(87%);

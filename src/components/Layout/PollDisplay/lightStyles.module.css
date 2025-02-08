@@ -1,53 +1,28 @@
-.section {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
+@media (min-width: 0px) {
+  .section {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
 
-.card {
-  background-color: var(--background-light);
-  box-shadow: var(--shadowbox-dimensional);
-  border: var(--border-black-medium);
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 1rem 2rem;
-  height: 45rem;
-  display: flex;
-  width: 30rem;
-  gap: 1rem;
-}
+  .card {
+    background-color: var(--background-light);
+    box-shadow: var(--shadowbox-dimensional);
+    border: var(--border-black-medium);
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    height: 45rem;
+    display: flex;
+    width: 30rem;
+    gap: 1rem;
+  }
 
-.closeContainer {
-  justify-content: end;
-  display: flex;
-}
-
-.closeButton {
-  transition: opacity 0.2s;
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-.title {
-  text-wrap-style: pretty;
-  font-size: 1.8rem;
-  width: 100%;
-}
-
-.dates {
-  display: flex;
-}
-
-.votes {
-  justify-content: space-between;
-  display: flex;
-}
-
-.options {
-  flex-direction: column;
-  padding: 0 1rem;
-  display: flex;
-  gap: 0.5rem;
+  .votes {
+    justify-content: space-between;
+    display: flex;
+  }
 }

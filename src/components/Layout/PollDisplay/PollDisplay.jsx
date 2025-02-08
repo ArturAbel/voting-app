@@ -1,14 +1,10 @@
-import { VscClose } from "react-icons/vsc";
-import Dates from "./components/Dates/Dates";
-import Creator from "./components/Creator/Creator";
-import { countPercentage, sumVotes } from "../../../utils/content/math";
+import Top from "./components/Top/Top";
 
 import lightStyles from "./lightStyles.module.css";
-import CardProgressBar from "../../UI/ProgressBar/CardProgressBar/CardProgressBar";
+import Middle from "./components/Middle/Middle";
+import Bottom from "./components/Bottom/Bottom";
 
 const PollDisplay = ({ selectedPoll, setSelectedPoll }) => {
-  const votesSum = sumVotes(selectedPoll);
-
   const handleClosePoll = () => {
     setSelectedPoll(null);
   };
@@ -20,28 +16,9 @@ const PollDisplay = ({ selectedPoll, setSelectedPoll }) => {
   return (
     <div className={lightStyles.section}>
       <div className={lightStyles.card}>
-        <div className={lightStyles.closeContainer}>
-          <VscClose className={lightStyles.closeButton} onClick={handleClosePoll} />
-        </div>
-        <div className={lightStyles.title}>{selectedPoll.title}</div>
-        {/* Dates with popup */}
-
-        <div className={lightStyles.dates}>
-          <Creator selectedPoll={selectedPoll} />
-          <Dates selectedPoll={selectedPoll} />
-        </div>
-
-        <div className={lightStyles.options}>
-          {selectedPoll.options.map((option) => (
-            <CardProgressBar
-              percent={countPercentage(option.votes, votesSum)}
-              votes={option.votes}
-              maxVotes={votesSum}
-              label={option.text}
-              key={option.id}
-            />
-          ))}
-        </div>
+        <Top selectedPoll={selectedPoll} handleClosePoll={handleClosePoll} />
+        <Middle selectedPoll={selectedPoll} />
+        <Bottom />
       </div>
 
       {/* Comment Container */}

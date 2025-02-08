@@ -1,0 +1,53 @@
+@media (min-width: 0px) {
+  .bottom {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .left,
+  .right {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .commentsIcon {
+    transition: transform 0.2s;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  .commentsIcon:hover {
+    transform: rotate(5deg);
+  }
+
+  /* TODO: Move to utils */
+  .button {
+    background-color: var(--background-light);
+    box-shadow: var(--shadowbox-dimensional);
+    border: var(--border-black-medium);
+    color: var(--fontColor-dark);
+    transition: all 0.2s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    min-width: 75px;
+  }
+
+  .button:hover {
+    box-shadow: var(--shadowbox-dimensional-clicked);
+    background-color: var(--background-dark);
+    color: var(--background-light);
+  }
+
+  .button:active {
+    background-color: var(--background-dark);
+    color: var(--fontColor-light);
+    transform: translateY(4px);
+    box-shadow: none;
+  }
+}

@@ -1,7 +1,7 @@
 import PollCardChip from "../../../../../UI/Chips/PollCardChip/PollCardChip";
 import { checkIfPollExpired } from "../../../../../../utils/content/text";
 import { CHIP } from "../../../../../../constants/data";
-import { CgComment } from "react-icons/cg";
+import { GoComment } from "react-icons/go";
 
 import styles from "./styles.module.css";
 
@@ -11,7 +11,7 @@ const Bottom = ({ poll }) => {
   return (
     <div className={styles.bottom}>
       <div className={styles.commentContainer}>
-        <CgComment />
+        <GoComment />
         <div className={styles.commentCount}>{commentsCount || 0}</div>
       </div>
       <div className={styles.chips}>
