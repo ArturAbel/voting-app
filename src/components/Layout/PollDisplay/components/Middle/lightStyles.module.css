@@ -1,0 +1,29 @@
+@media (min-width: 0px) {
+  .container {
+    flex-direction: column;
+    padding: 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .titleWrapper {
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .title {
+    text-wrap-style: pretty;
+    font-size: 1.8rem;
+  }
+
+  .hashtags {
+    align-items: center;
+    display: flex;
+    height: 2rem;
+    width: 100%;
+    gap: 1rem;
+  }
+}

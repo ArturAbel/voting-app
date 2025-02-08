@@ -1,4 +1,4 @@
-import { defaultProfileImage } from "../../../../../constants/data";
+import { defaultProfileImage } from "../../../../../../constants/data";
 
 import lightStyles from "./lightStyles.module.css";
 

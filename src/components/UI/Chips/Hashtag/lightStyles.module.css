@@ -1,0 +1,12 @@
+/* TODO:Create a variable */
+.hashtag {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  background-color: var(--background-hashtag);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.hash {
+  font-size: 1.1rem;
+  font-weight: 400;
+}

@@ -1,105 +1,28 @@
-.section {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
+@media (min-width: 0px) {
+  .section {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
 
-.card {
-  background-color: var(--background-light);
-  box-shadow: var(--shadowbox-dimensional);
-  border: var(--border-black-medium);
-  justify-content: space-between;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 2rem 3rem;
-  height: 45rem;
-  display: flex;
-  width: 30rem;
-  gap: 1rem;
-}
+  .card {
+    background-color: var(--background-light);
+    box-shadow: var(--shadowbox-dimensional);
+    border: var(--border-black-medium);
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    height: 45rem;
+    display: flex;
+    width: 30rem;
+    gap: 1rem;
+  }
 
-.topDiv {
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
-}
-
-.closeButton {
-  transition: opacity 0.2s;
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-.title {
-  text-wrap-style: pretty;
-  font-size: 1.8rem;
-  width: 100%;
-}
-
-.dates {
-  padding-top: 1rem;
-  display: flex;
-}
-
-.votes {
-  justify-content: space-between;
-  display: flex;
-}
-
-.options {
-  flex-direction: column;
-  padding: 0 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.bottom {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
-
-.left,
-.right {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-}
-
-.chipContainer {
-  width: 3rem;
-}
-
-.commentsIcon {
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-.button {
-  background-color: var(--background-light);
-  box-shadow: var(--shadowbox-dimensional);
-  border: var(--border-black-medium);
-  color: var(--fontColor-dark);
-  transition: all 0.2s ease;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.button:hover {
-  box-shadow: var(--shadowbox-dimensional-clicked);
-  background-color: var(--background-dark);
-  color: var(--background-light);
-}
-
-.button:active {
-  background-color: var(--background-dark);
-  color: var(--fontColor-light);
-  transform: translateY(4px);
-  box-shadow: none;
+  .votes {
+    justify-content: space-between;
+    display: flex;
+  }
 }
