@@ -12,6 +12,14 @@
     gap: 1rem;
   }
 
+  .iconContainer {
+    align-items: center;
+    position: relative;
+    display: flex;
+    height: 2rem;
+    gap: 0.5rem;
+  }
+
   .commentsIcon {
     transition: transform 0.2s;
     font-size: 2.5rem;
@@ -20,6 +28,11 @@
 
   .commentsIcon:hover {
     transform: rotate(5deg);
+  }
+
+  .count {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   /* TODO: Move to utils */
@@ -33,7 +46,7 @@
     padding: 0.5rem 1rem;
     border-radius: 8px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
     min-width: 75px;
   }

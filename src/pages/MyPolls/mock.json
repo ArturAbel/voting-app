@@ -8,7 +8,7 @@
         "id": "option2",
         "text": "Python",
         "votes": 5,
-        "voters": ["userID125", "userID126", "userID127", "userID128", "userID129"]
+        "voters": ["vjMlFt3bapfhnSImJJUwlRiNYzg2", "userID126", "userID127", "userID128", "userID129"]
       },
       {
         "id": "option3",
@@ -18,14 +18,13 @@
       },
       { "id": "option4", "text": "Python", "votes": 1, "voters": ["userID134"] }
     ],
-    "createdBy": { "name": "userID123", "img": "/assets/images/users/avatar.png" },
-    "createdByImage": "/assets/images/users/avatar.png",
+    "createdBy": { "id": "userID123", "img": "/assets/images/users/avatar.png" },
     "createdAt": "2025-01-22T12:34:56.789Z",
     "closeAt": "2026-01-27T12:34:56.789Z",
     "visibility": "public",
     "hashtags": ["javascript", "python", "webdev"],
     "participants": [
-      { "user": "userID124", "img": "/assets/images/users/avatar.png" },
+      { "user": "vjMlFt3bapfhnSImJJUwlRiNYzg2", "img": "/assets/images/users/avatar.png" },
       { "user": "userID125", "img": "/assets/images/users/avatar.png" },
       { "user": "userID127", "img": "/assets/images/users/avatar.png" },
       { "user": "userID128", "img": "/assets/images/users/avatar.png" },
@@ -41,12 +40,12 @@
       {
         "userId": "userID127",
         "text": "I love Python!",
-        "timestamp": "2025-01-22T12:45:56.789Z"
+        "createdAt": "2025-01-22T12:45:56.789Z"
       },
       {
         "userId": "userID127",
         "text": "I love Python!",
-        "timestamp": "2025-01-22T12:45:56.789Z"
+        "createdAt": "2025-01-22T12:45:56.789Z"
       }
     ]
   },
@@ -59,7 +58,7 @@
       { "id": "option3", "text": "Angular", "votes": 20 },
       { "id": "option4", "text": "Svelte", "votes": 22 }
     ],
-    "createdBy": { "name": "userID124", "img": "/assets/images/users/avatar.png" },
+    "createdBy": { "id": "userID124", "img": "/assets/images/users/avatar.png" },
     "createdByImage": "/assets/images/users/avatar.png",
     "createdAt": "2025-01-20T15:23:45.123Z",
     "closeAt": "2025-01-23T15:23:45.123Z",
@@ -79,6 +78,11 @@
       },
       {
         "userId": "userID463",
+        "text": "Vue is simpler to use!",
+        "timestamp": "2025-01-20T17:00:00.456Z"
+      },
+      {
+        "userId": "userID468",
         "text": "Vue is simpler to use!",
         "timestamp": "2025-01-20T17:00:00.456Z"
       }

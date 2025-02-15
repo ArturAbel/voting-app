@@ -8,7 +8,8 @@
     width: 100%;
   }
 
-  .progressTest {
+  .open,
+  .disabled {
     background-color: var(--background-progressbar);
     -webkit-appearance: none;
     border-radius: 10px;
@@ -40,26 +41,47 @@
   }
 
   .progress::-webkit-progress-bar,
-  .progressTest::-webkit-progress-bar {
+  .open::-webkit-progress-bar {
     background-color: var(--background-progressbar);
     border-radius: 10px;
   }
 
   .progress::-webkit-progress-value,
-  .progressTest::-webkit-progress-value {
+  .open::-webkit-progress-value {
     background: var(--background-green);
     border-radius: 10px;
   }
 
   .progress::-moz-progress-bar,
-  .progressTest::-moz-progress-bar {
+  .open::-moz-progress-bar {
     background: var(--background-green);
     border-radius: 10px;
   }
 
   .progress::-ms-fill,
-  .progressTest::-ms-fill {
+  .open::-ms-fill {
     background: var(--background-green);
+    border-radius: 10px;
+  }
+
+  .disabled::-webkit-progress-bar {
+    background-color: var(--background-progressbar);
+    border-radius: 10px;
+    opacity: 0.1;
+  }
+
+  .disabled::-webkit-progress-value {
+    background-color: var(--background-dark);
+    border-radius: 10px;
+  }
+
+  .disabled::-moz-progress-bar {
+    background-color: var(--background-dark);
+    border-radius: 10px;
+  }
+
+  .disabled::-ms-fill {
+    background-color: var(--background-dark);
     border-radius: 10px;
   }
 }

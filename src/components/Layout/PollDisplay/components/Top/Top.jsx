@@ -1,4 +1,5 @@
 import PollCardChip from "../../../../UI/Chips/PollCardChip/PollCardChip";
+import { setCapitalSentence } from "../../../../../utils/content/text";
 import { useThemeStyles } from "../../../../../hooks/useThemeStyles";
 import { CHIP } from "../../../../../constants/data";
 import { VscClose } from "react-icons/vsc";
@@ -20,7 +21,11 @@ const Top = ({ selectedPoll, handleClosePoll }) => {
     <div className={styles.top}>
       <div className={styles.container}>
         <div className={styles.chips}>
-          <PollCardChip text={selectedPoll.visibility} type={CHIP.visibility} tip={"Poll Visibility"} />
+          <PollCardChip
+            text={setCapitalSentence(selectedPoll.visibility)}
+            type={CHIP.visibility}
+            tip={"Poll Visibility"}
+          />
           <PollCardChip text={verbalizeToDate()} type={CHIP.createdAt} tip={"Vote Days Left"} />
         </div>
         <VscClose className={styles.closeButton} onClick={handleClosePoll} />
