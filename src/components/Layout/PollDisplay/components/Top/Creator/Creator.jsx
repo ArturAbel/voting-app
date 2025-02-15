@@ -14,7 +14,7 @@ const Creator = ({ selectedPoll }) => {
           alt={selectedPoll.pollId}
         />
       </div>
-      <div className={lightStyles.createdName}>{selectedPoll.createdBy.name}</div>
+      <div className={lightStyles.createdName}>{selectedPoll.createdBy.id}</div>
     </div>
   );
 };

@@ -8,8 +8,8 @@ const Tooltip = ({ children, tip }) => {
 
   return (
     <div className={styles.tooltip}>
-      {children}
       <div className={styles.text}>{tip}</div>
+      {children}
     </div>
   );
 };

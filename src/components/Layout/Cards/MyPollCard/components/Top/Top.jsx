@@ -35,7 +35,7 @@ const Top = ({ poll }) => {
     <>
       <div className={styles.top}>
         <div className={styles.avatar}>
-          <img className={styles.image} src={poll.createdByImage}></img>
+          <img className={styles.image} src={poll.createdBy.img}></img>
         </div>
         <p className={styles.title}>{setCapitalSentence(poll.title)}</p>
         <div className={styles.options} ref={popupRef}>

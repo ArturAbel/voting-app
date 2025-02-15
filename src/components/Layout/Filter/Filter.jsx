@@ -6,9 +6,8 @@ import { useState } from "react";
 import lightStyles from "./lightStyles.module.css";
 import darkStyles from "./darkStyles.module.css";
 
-const Filter = ({ polls, setDisplayedPolls }) => {
+const Filter = ({ polls, setFilteredPolls }) => {
   const [isButtonClicked, setIsButtonClicked] = useState({ privatePolls: false, openPolls: false });
-  const [filteredPolls, setFilteredPolls] = useState(polls);
   const styles = useThemeStyles(lightStyles, darkStyles);
 
   const handleInputChange = (e) => {
@@ -24,7 +23,7 @@ const Filter = ({ polls, setDisplayedPolls }) => {
   const handleButtonClick = (buttonName) => {
     setIsButtonClicked((prevState) => {
       const newState = { ...prevState, [buttonName]: !prevState[buttonName] };
-      applyFilters(filteredPolls, newState);
+      applyFilters(polls, newState);
       return newState;
     });
   };
@@ -38,7 +37,7 @@ const Filter = ({ polls, setDisplayedPolls }) => {
     if (openPolls) {
       filtered = filtered.filter((poll) => checkIfPollExpired(poll.closeAt) === "Open");
     }
-    setDisplayedPolls(filtered);
+    setFilteredPolls(filtered);
   };
 
   return (

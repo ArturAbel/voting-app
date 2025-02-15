@@ -15,5 +15,6 @@ const userSlice = createSlice({
   },
 });
 
+export const selectUser = (state) => state.user.userData;
 export const { setUser, clearUser } = userSlice.actions;
 export default userSlice.reducer;
