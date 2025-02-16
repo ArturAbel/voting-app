@@ -1,6 +1,6 @@
-export function checkHasVoted({ selectedPoll, userData }) {
-  if (selectedPoll && userData) {
-    const hasVoted = selectedPoll.participants.find((participant) => participant.user.includes(userData.uid));
+export function checkHasVoted({ poll, userData }) {
+  if (poll && userData) {
+    const hasVoted = poll.participants.find((participant) => participant.user.includes(userData.uid));
     return hasVoted ? true : false;
   }
   return false;
@@ -8,7 +8,8 @@ export function checkHasVoted({ selectedPoll, userData }) {
 
 export function findVotedOption({ voters, userData }) {
   if (voters && userData) {
-    return voters.includes(userData.uid);
+    const usersArray = voters.map((value) => value.user);
+    return usersArray.includes(userData.uid);
   }
   return false;
 }

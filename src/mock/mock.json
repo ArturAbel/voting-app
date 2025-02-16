@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Best Programming Language",
+    "options": [
+      {
+        "id": "option1",
+        "text": "JavaScript",
+        "votes": 1,
+        "voters": [{ "user": "userID124", "img": "/assets/images/users/avatar.png" }]
+      },
+      {
+        "id": "option2",
+        "text": "Python",
+        "votes": 5,
+        "voters": [
+          { "user": "vjMlFt3bapfhnSImJJUwlRiNYzg2", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID126", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID127", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID128", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID129", "img": "/assets/images/users/avatar.png" }
+        ]
+      },
+      {
+        "id": "option3",
+        "text": "Python",
+        "votes": 4,
+        "voters": [
+          { "user": "userID130", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID131", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID132", "img": "/assets/images/users/avatar.png" },
+          { "user": "userID129", "img": "/assets/images/users/avatar.png" }
+        ]
+      },
+      {
+        "id": "option4",
+        "text": "Python",
+        "votes": 1,
+        "voters": [{ "user": "userID134", "img": "/assets/images/users/avatar.png" }]
+      }
+    ],
+    "createdBy": { "id": "userID123", "img": "/assets/images/users/avatar.png" },
+    "createdAt": "2025-01-22T12:34:56.789Z",
+    "closeAt": "2026-01-27T12:34:56.789Z",
+    "visibility": "public",
+    "hashtags": ["javascript", "python", "webdev"],
+    "participants": [
+      { "user": "vjMlFt3bapfhnSImJJUwlRiNYzg2", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID125", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID127", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID128", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID129", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID130", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID131", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID132", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID133", "img": "/assets/images/users/avatar.png" },
+      { "user": "userID134", "img": "/assets/images/users/avatar.png" }
+    ],
+    "likedBy": ["userID126"],
+    "comments": [
+      {
+        "userId": "userID127",
+        "text": "I love Python!",
+        "createdAt": "2025-01-22T12:45:56.789Z"
+      },
+      {
+        "userId": "userID127",
+        "text": "I love Python!",
+        "createdAt": "2025-01-22T12:45:56.789Z"
+      }
+    ]
+  }
+]

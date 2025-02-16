@@ -12,7 +12,9 @@ const Top = ({ poll }) => {
   const [isClicked, setIsClicked] = useState(false);
   const popupRef = useRef(null);
 
-  const handleSettingIconClick = () => {
+  const handleSettingIconClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setIsClicked((prevState) => !prevState);
   };
 
@@ -39,12 +41,7 @@ const Top = ({ poll }) => {
         </div>
         <p className={styles.title}>{setCapitalSentence(poll.title)}</p>
         <div className={styles.options} ref={popupRef}>
-          <PiDotsThreeOutlineFill
-            onClick={(e) => {
-              e.stopPropagation();
-              handleSettingIconClick();
-            }}
-          />
+          <PiDotsThreeOutlineFill onClick={handleSettingIconClick} />
           {isClicked && (
             <div className={styles.popup}>
               <div className={styles.option}>Edit</div>
