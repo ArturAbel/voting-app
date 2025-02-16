@@ -1,13 +1,13 @@
-import { signUp, signUpWithGoogle } from "../../../utils/authentication/signUp";
-import { uploadProfileImage } from "../../../utils/dataBase/uploadProfileImage";
+import { signUp, signUpWithGoogle } from "../../../api/authentication/signUp";
 import ButtonsContainer from "./components/ButtonsContainer/ButtonsContainer";
-import { createUserInDB } from "../../../utils/dataBase/createUserInDB";
+import { uploadProfileImage } from "../../../api/image/uploadProfileImage";
+import { createUserInDB } from "../../../api/user/createUserInDB";
 import ButtonsLogin from "./components/ButtonsLogin/ButtonsLogin";
 import ButtonCreate from "./components/ButtonCreate/ButtonCreate";
 import { uniqueNamesGenerator } from "unique-names-generator";
-import { signIn } from "../../../utils/authentication/signIn";
 import { defaultProfileImage } from "../../../constants/data";
 import { randomNameConfig } from "./config/randomNameConfig";
+import { signIn } from "../../../api/authentication/signIn";
 import LinkSignUp from "./components/LinkSignUp/LinkSignUp";
 import { LOGIN_INPUT_CONFIG } from "./data/LoginForm.data";
 import { getFeedbackMessage } from "./lib/LoginForm.lib";

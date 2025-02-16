@@ -1,4 +1,4 @@
-import { getUserFromDB } from "../../../utils/dataBase/getUserFromDB";
+import { getUserFromDB } from "../../../api/user/getUserFromDB";
 import { useThemeStyles } from "../../../hooks/useThemeStyles";
 import { setUser } from "../../../redux/slices/userSlice";
 import { auth } from "../../../config/firebase";

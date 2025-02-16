@@ -1,6 +1,7 @@
 @media (min-width: 0px) {
   .container {
     flex-direction: column;
+    min-height: 260px;
     padding: 0 1rem;
     display: flex;
     gap: 0.5rem;
